@@ -166,6 +166,14 @@
   font-size: 1.3rem;
   font-weight: bold;
 }
+.headerBtm > .btm_searchWrap > form > .btm_search::-ms-clear, .headerBtm > .btm_searchWrap > form > .btm_search::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.headerBtm > .btm_searchWrap > form > .btm_search::-webkit-search-decoration, .headerBtm > .btm_searchWrap > form > .btm_search::-webkit-search-cancel-button, .headerBtm > .btm_searchWrap > form > .btm_search::-webkit-search-results-button, .headerBtm > .btm_searchWrap > form > .btm_search::-webkit-search-results-decoration {
+  display: none;
+}
 .headerBtm > .btm_searchWrap > form > .btm_search::-moz-placeholder {
   color: transparent;
   font-weight: normal;
