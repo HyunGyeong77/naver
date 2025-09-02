@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1190">
     <meta name="description" content="naver imitation" />
     <meta name="keywords" content="웹 개발, 포트폴리오, 모작" />
     <meta name="robots" content="index, nofollow" />
@@ -18,70 +18,71 @@
 </head>
 <body>
     <header class="header">
-        <section class="headerTop">
+        <section class="header-top">
             <div>
-                <div class="top_hamburgerArea">
-                    <div class="top_hamburgerBtn">
+                <div class="top-hamburger-area">
+                    <div class="top-hamburger-btn">
                         <button type="button" 
-                            aria-label="확장 영역" aria-haspopup="dialog" aria-expanded="false"></button>
+                            aria-label="확장 영역" aria-haspopup="dialog" aria-expanded="false" aria-controls="hamburger-dialog"></button>
                     </div>
-                    <dialog></dialog>
+                    <dialog id="hamburger-dialog"></dialog>
                 </div>
-                <div class="top_payLink">
-                    <a href="#"></a>
+                <div class="top-pay-link">
+                    <a href="#" aria-label="네이버 페이로 이동"></a>
                 </div>
             </div>
             <ul>
-                <li class="top_talkArea"><button type="button" aria-label="네이버톡 버튼" aria-haspopup="dialog" aria-expanded="false"></button></li>
-                <li class="top_notiArea"><button type="button" aria-label="알림 버튼" aria-haspopup="dialog" aria-expanded="false"></button></li>
-                <li class="top_shopArea"><a href="#" aria-label="장바구니 이동"></a></li>
+                <li class="top-talk-area"><button type="button" aria-label="네이버톡 버튼" aria-haspopup="dialog" aria-expanded="false"></button></li>
+                <li class="top-noti-area"><button type="button" aria-label="알림 버튼" aria-haspopup="dialog" aria-expanded="false"></button></li>
+                <li class="top-shop-area"><a href="#" aria-label="장바구니 이동"></a></li>
             </ul>
         </section>
-        <section class="headerBtm">
-            <div class="btm_searchWrap">
+        <section class="header-btm">
+            <div class="btm-search-wrap">
                 <a href="#" aria-label="홈 이동">
                     <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path></svg></span>
                 </a>
                 <form>
-                    <input class="btm_search" type="search" title="검색어를 입력해 주세요." name="search" placeholder="검색어를 입력해 주세요." autocomplete="off" maxlength="255"
-                        aria-autocomplete="list" aria-expanded="false"  />
+                    <input class="btm-search" type="search" title="검색어를 입력해 주세요." name="search" placeholder="검색어를 입력해 주세요." autocomplete="off" maxlength="255"
+                        aria-autocomplete="list"  />
                     <div>
-                        <button class="btm_autoComplete" aria-label="검색 결과 목록 버튼" aria-expanded="false"></button>
-                        <button class="btm_submit" type="submit" aria-label="검색 버튼">
+                        <button type="button" class="btm-auto-complete" aria-label="검색 결과 목록 버튼" aria-expanded="false"></button>
+                        <button type="submit" class="btm-submit" aria-label="검색 버튼">
                             <span><svg id="search-btn" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="fill: #03c75a"> <path d="M22.13.5c11.378 0 20.632 9.256 20.632 20.63 0 4.699-1.566 9.155-4.439 12.782l10.164 10.165a2.41 2.41 0 0 1-1.706 4.115 2.412 2.412 0 0 1-1.706-.705L33.31 35.719a2.41 2.41 0 0 1 0-3.41 15.71 15.71 0 0 0 4.628-11.178c0-8.718-7.09-15.808-15.807-15.808-8.718 0-15.808 7.09-15.808 15.808 0 7.15 4.817 13.43 11.714 15.273a2.41 2.41 0 0 1 1.705 2.954 2.41 2.41 0 0 1-2.95 1.705C7.788 38.658 1.5 30.46 1.5 21.131 1.5 9.756 10.756.5 22.13.5zm4.716 34.746a3.483 3.483 0 1 1 0 6.966 3.483 3.483 0 0 1 0-6.966z"></path></svg></span>
                         </button>
                     </div>
                 </form>
-                <button class="btm_keyboard" type="button" aria-label="화상 키보드 버튼" aria-expanded="false" aria-haspopup="dialog"></button>
+                <button class="btm-keyboard" type="button" aria-label="화상 키보드 버튼" aria-expanded="false" aria-haspopup="dialog"></button>
             </div>
-            <nav class="btm_menuWrap">
+            <nav class="btm-menu-wrap">
                 <ul>
-                    <li><a href="#" class="btm_mail"><span></span><span>메일</span></a></li>
-                    <li><a href="#" class="btm_cafe"><span></span><span>카페</span></a></li>
-                    <li><a href="#" class="btm_blog"><span></span><span>블로그</span></a></li>
-                    <li><a href="#" class="btm_store"><span></span><span>스토어</span></a></li>
-                    <li><a href="#" class="btm_news"><span></span><span>뉴스</span></a></li>
-                    <li><a href="#" class="btm_cert"><span></span><span>증권</span></a></li>
-                    <li><a href="#" class="btm_realty"><span></span><span>부동산</span></a></li>
-                    <li><a href="#" class="btm_map"><span></span><span>지도</span></a></li>
-                    <li><a href="#" class="btm_webtoon"><span></span><span>웹툰</span></a></li>
-                    <li><a href="#" class="btm_chzzk"><span><img src="assets/images/chzzk.png" alt="치지직" width="40" height="40" /></span><span>치지직</span></a></li>
-                    <li><a href="#" class="btm_more" aria-label="더보기 버튼"><span></span></a></li>
-                    <li><a href="#" class="btm_ad"><span><img src="assets/images/adobe.png" alt="Adobe" width="40" height="40" /></span><span>Adobe</span><i></i></a></li>
+                    <li><a href="#" class="btm-mail"><span></span><span>메일</span></a></li>
+                    <li><a href="#" class="btm-cafe"><span></span><span>카페</span></a></li>
+                    <li><a href="#" class="btm-blog"><span></span><span>블로그</span></a></li>
+                    <li><a href="#" class="btm-store"><span></span><span>스토어</span></a></li>
+                    <li><a href="#" class="btm-news"><span></span><span>뉴스</span></a></li>
+                    <li><a href="#" class="btm-cert"><span></span><span>증권</span></a></li>
+                    <li><a href="#" class="btm-realty"><span></span><span>부동산</span></a></li>
+                    <li><a href="#" class="btm-map"><span></span><span>지도</span></a></li>
+                    <li><a href="#" class="btm-webtoon"><span></span><span>웹툰</span></a></li>
+                    <li><a href="#" class="btm-chzzk"><span><img src="assets/images/chzzk.png" alt="치지직" width="40" height="40" /></span><span>치지직</span></a></li>
+                    <li><a href="#" class="btm-more" aria-label="더보기 버튼"><span></span></a></li>
+                    <li><a href="#" class="btm-ad"><span><img src="assets/images/adobe.png" alt="Adobe" width="40" height="40" /></span><span>Adobe</span><i></i></a></li>
                 </ul>
             </nav>
-            <a href="#" class="btm_advert" aria-label="어도비 사이트로 이동"><img src="assets/images/header_advert.png" alt="어도비 포토샵 광고" width="244" height="108" /></a>
+            <a href="#" class="btm-advert" aria-label="어도비 사이트로 이동"><img src="assets/images/header-advert.png" alt="어도비 포토샵 광고" width="244" height="108" /></a>
         </section>
     </header>
     <main class="main">
-        <div class="sectionLeft">
+        <div class="section-left">
             <section>
                 <a href="#" style="display:block; height:130px">
-                    <img src="assets/images/section_banner.jpg" alt="배너 이미지" width="830" height="130" style="border-radius:8px" />
+                    <img src="assets/images/section-banner.jpg" alt="배너 이미지" width="830" height="130" style="border-radius:8px" />
                 </a>
+      
             </section>
-            <section class="sectionNews">
-                <div class="news_top">
+            <section class="section-news">
+                <div class="news-top">
                     <ul>
                         <li>
                             <button type="button">뉴스스탠드</button>
@@ -128,30 +129,30 @@
                             </div>
                         </div>
                         <ul>
-                            <li><a href="#"><img src="assets/images/sportsChosun.png" alt="스포츠조선 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/moneyToday.png" alt="머니투데이 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/dailySports.png" alt="일간스포츠 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/sports-chosun.png" alt="스포츠조선 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/moneytoday.png" alt="머니투데이 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/daily-sports.png" alt="일간스포츠 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/mbc.png" alt="mbc 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/channel.png" alt="채널A 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/ohMyNews.png" alt="오마이뉴스 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/segyeIlbo.png" alt="세계일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/asiaToday.png" alt="아시아투데이 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/ohmynews.png" alt="오마이뉴스 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/segye-ilbo.png" alt="세계일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/asiatoday.png" alt="아시아투데이 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/pressian.png" alt="프레시안 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/herald.png" alt="헤럴드경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/koreanEconomy.png" alt="한국경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/nocutNews.png" alt="노컷뉴스 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/joongAngDaily.png" alt="중앙일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/korean-economy.png" alt="한국경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/nocutnews.png" alt="노컷뉴스 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/joongang-daily.png" alt="중앙일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/jtbc.png" alt="jtbc 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/seoulEconomy.png" alt="서울경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/gyeonggiIlbo.png" alt="경기일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/gyeonginIlbo.png" alt="경인일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/incheonIlbo.png" alt="인천일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/sportsChunchu.png" alt="스포츠춘추 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/ajuEconomy.png" alt="아주경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/seoul-economy.png" alt="서울경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/gyeonggi-ilbo.png" alt="경기일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/gyeongin-ilbo.png" alt="경인일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/incheon-ilbo.png" alt="인천일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/sports-chunchu.png" alt="스포츠춘추 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/aju-economy.png" alt="아주경제 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/newsen.png" alt="newsen 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/newsPim.png" alt="뉴스핌 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/newspim.png" alt="뉴스핌 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                             <li><a href="#"><img src="assets/images/journal.png" alt="PD저널 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
-                            <li><a href="#"><img src="assets/images/weeklyTrend.png" alt="주간경향 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
+                            <li><a href="#"><img src="assets/images/weekly-trend.png" alt="주간경향 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                         </ul>
                     </section>
                     <section class="edit">
@@ -170,7 +171,7 @@
 
                     </section>
                 </div>
-                <div class="news_btm">
+                <div class="news-btm">
                     <div>
                         <button type="button" aria-label="이전 페이지"></button>
                         <p>
@@ -184,13 +185,13 @@
                         <button type="button" aria-label="다음 페이지"></button>
                     </div>
                     <div>
-                        <button type="button" aria-label="리스트형" aria-checked="false"></button>
-                        <button type="button" aria-label="썸네일형" aria-checked="true"></button>
+                        <button type="button" role="radio" aria-label="리스트형" aria-checked="false"></button>
+                        <button type="button" role="radio" aria-label="썸네일형" aria-checked="true"></button>
                     </div>
                 </div>
             </section>
-            <section class="sectionShoppings">
-                <div class="shoppings_top">
+            <section class="section-shoppings">
+                <div class="shoppings-top">
                     <ul>
                         <li><button type="button">쇼핑</button></li>
                         <li><button type="button">맨즈</button></li>
@@ -207,7 +208,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="shoppings_mid">
+                <div class="shoppings-mid">
                     <div>
                         <div>
                             <ul>
@@ -266,7 +267,7 @@
                         </div>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings.jpg" alt="메라블 광고 이미지" width="248" height="146" />
+                                <img src="assets/images/section-shoppings.jpg" alt="메라블 광고 이미지" width="248" height="146" />
                             </span>
                             <span>힘들게 운동 왜 해요?</span>
                         </a>
@@ -274,67 +275,67 @@
                     <div>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings1.jpg" alt="내맘에 쏙~들어 핫세일36%↓Off" width="98" height="126" />
+                                <img src="assets/images/section-shoppings1.jpg" alt="내맘에 쏙~들어 핫세일36%↓Off" width="98" height="126" />
                             </span>
                             <p>내맘에 쏙~들어 핫세일36%↓Off</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings2.jpg" alt="질스튜어트 BAG 지금 SALE 특가!" width="98" height="126" />
+                                <img src="assets/images/section-shoppings2.jpg" alt="질스튜어트 BAG 지금 SALE 특가!" width="98" height="126" />
                             </span>
                             <p>질스튜어트 BAG 지금 SALE 특가!</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings3.jpg" alt="가을룩 대란예감 세련미 폭발했다" width="98" height="126" />
+                                <img src="assets/images/section-shoppings3.jpg" alt="가을룩 대란예감 세련미 폭발했다" width="98" height="126" />
                             </span>
                             <p>가을룩 대란예감 세련미 폭발했다</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings4.jpg" alt="여배우들이 써요 오이팩한듯 촉촉" width="98" height="126" />
+                                <img src="assets/images/section-shoppings4.jpg" alt="여배우들이 써요 오이팩한듯 촉촉" width="98" height="126" />
                             </span>
                             <p>여배우들이 써요 오이팩한듯 촉촉</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings5.jpg" alt="부모가 작다고 아이도작을까요" width="98" height="126" />
+                                <img src="assets/images/section-shoppings5.jpg" alt="부모가 작다고 아이도작을까요" width="98" height="126" />
                             </span>
                             <p>부모가 작다고 아이도작을까요</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings6.jpg" alt="노출부담 ZERO 레깅스쇼츠 1+1" width="98" height="126" />
+                                <img src="assets/images/section-shoppings6.jpg" alt="노출부담 ZERO 레깅스쇼츠 1+1" width="98" height="126" />
                             </span>
                             <p>노출부담 ZERO 레깅스쇼츠 1+1</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings7.jpg" alt="먼지비움 청소기 정말 10만원대?" width="98" height="126" />
+                                <img src="assets/images/section-shoppings7.jpg" alt="먼지비움 청소기 정말 10만원대?" width="98" height="126" />
                             </span>
                             <p>먼지비움 청소기 정말 10만원대?</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings8.jpg" alt="더 단정해진 수납 솔루션" width="98" height="126" />
+                                <img src="assets/images/section-shoppings8.jpg" alt="더 단정해진 수납 솔루션" width="98" height="126" />
                             </span>
                             <p>더 단정해진 수납 솔루션</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings9.jpg" alt="머리만감았는데 얼굴선이달라져!" width="98" height="126" />
+                                <img src="assets/images/section-shoppings9.jpg" alt="머리만감았는데 얼굴선이달라져!" width="98" height="126" />
                             </span>
                             <p>머리만감았는데 얼굴선이달라져!</p>
                         </a>
                         <a href="#">
                             <span>
-                                <img src="assets/images/section_shoppings10.jpg" alt="미소페 BEST슈즈 최대 46%할인" width="98" height="126" />
+                                <img src="assets/images/section-shoppings10.jpg" alt="미소페 BEST슈즈 최대 46%할인" width="98" height="126" />
                             </span>
                             <p>미소페 BEST슈즈 최대 46%할인</p>
                         </a>
                     </div>
                 </div>
-                <div class="shoppings_advert">
+                <div class="shoppings-advert">
                     <p>오늘의 혜택</p>
                     <a href="#">
                         <img src="assets/images/coupang.png" alt="쿠팡 이미지" height="13" />
@@ -345,7 +346,7 @@
                         </p>
                     </a>
                 </div>
-                <div class="shoppings_btm">
+                <div class="shoppings-btm">
                     <div>
                         <button type="button" aria-label="이전 페이지"></button>
                         <p>
@@ -361,8 +362,8 @@
                     <p>AD</p>
                 </div>
             </section>
-            <section class="sectionSubScribe">
-                <div class="subScribe_top">
+            <section class="section-subscribe">
+                <div class="subscribe-top">
                     <ul>
                         <li><button type="button">추천</button></li>
                         <li><button type="button">카테크</button></li>
@@ -376,44 +377,44 @@
                     </ul>
                     <a href="#">구독홈</a>
                 </div>
-                <div class="subScribe_suggest">
+                <div class="subscribe-suggest">
                     <ul>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest1.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest1.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>오미자, 청귤, 매실을 통째로 갈아넣은 과일청</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest1_icon.jpg" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest1-icon.jpg" alt="" width="20" height="20">
                                     <span>청숨</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest2.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest2.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>맛있는 희망을 굽는 대전의 특별한 빵집</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest2_icon.png" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest2-icon.png" alt="" width="20" height="20">
                                     <span>한터</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest3.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest3.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>2025년 14호 태풍 농파 발생 가능성 경로 9월 태풍 전망</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest3_icon.jpg" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest3-icon.jpg" alt="" width="20" height="20">
                                     <span>체리오렌지</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest4.png" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest4.png" alt="" width="182.5px" height="120"></span>
                                 <span>27기 정숙 스킨십 해명했지만, 여자 시청자들 화난 이유(나는솔로)</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest4_icon.jpg" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest4-icon.jpg" alt="" width="20" height="20">
                                     <span>나무처럼</span>
                                     <span>인플루언서</span>
                                 </span>
@@ -421,10 +422,10 @@
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest5.png" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest5.png" alt="" width="182.5px" height="120"></span>
                                 <span>사자들에게 잡아 먹힐 줄 알았던 기린...모두의 예측을 뒤집은 충격 결말</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest5_icon.png" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest5-icon.png" alt="" width="20" height="20">
                                     <span>애니멀플래닛</span>
                                     <span>인플루언서</span>
                                 </span>
@@ -432,10 +433,10 @@
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest6.png" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest6.png" alt="" width="182.5px" height="120"></span>
                                 <span>공무원 20년 연봉을 한 달 만에 받는 충격적인 직장..</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest6_icon.jpg" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest6-icon.jpg" alt="" width="20" height="20">
                                     <span>에이다 웡</span>
                                     <span>인플루언서</span>
                                 </span>
@@ -443,105 +444,105 @@
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest7.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest7.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>처음보는 착장으로 악마는 프라다를 입는다2 촬영하는 앤 해서웨이</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest7_icon.png" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest7-icon.png" alt="" width="20" height="20">
                                     <span>Freya</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest8.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest8.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>[누적리뷰5만] 국내생산 코일매트</span>
                                 <span>메이튼</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest9.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest9.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>“38세에 경험부족 핑계?” 김진웅 아나, 결국 KBS 하차 청원까지</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest9_icon.png" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest9-icon.png" alt="" width="20" height="20">
                                     <span>호두</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest10.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest10.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>집밥을 좋아하는 삼형제 엄마의 어른 점심밥상</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest10_icon.png" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest10-icon.png" alt="" width="20" height="20">
                                     <span>레몬테라스 [인테리어,리폼,DIY,요리,결혼,육아,커뮤니티]</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest11.jpg" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest11.jpg" alt="" width="182.5px" height="120"></span>
                                 <span>도예명장의 손길로 빚은 다기&전통차 세트</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest11_icon.jpg" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest11-icon.jpg" alt="" width="20" height="20">
                                     <span>영산요</span>
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span><img src="assets/images/section_subScribe_suggest12.png" alt="" width="182.5px" height="120"></span>
+                                <span><img src="assets/images/section-subscribe-suggest12.png" alt="" width="182.5px" height="120"></span>
                                 <span>상상만 해도 무서워…변기 물 내리자 커다란 뱀 머리가 튀어나왔다</span>
                                 <span>
-                                    <img src="assets/images/section_subScribe_suggest5_icon.png" alt="" width="20" height="20">
+                                    <img src="assets/images/section-subscribe-suggest5-icon.png" alt="" width="20" height="20">
                                     <span>애니멀플래닛</span>
                                     <span>인플루언서</span>
                                 </span>
                             </a>
                         </li>
                     </ul>
-                    <div class="subScribe_short">
+                    <div class="subscribe-short">
                         <h2>매일 찾는 짧은 즐거움</h2>
                         <div>
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <span><img src="assets/images/section_subScribe_short1.jpg" alt="" width="108.33px" height="156px"></span>
+                                        <span><img src="assets/images/section-subscribe-short1.jpg" alt="" width="108.33px" height="156px"></span>
                                         <p>수비드 스테이크를 처음 맛본 조선 양반 반응</p>
                                         <span>드라마 핫클립</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span><img src="assets/images/section_subScribe_short2.jpg" alt="" width="108.33px" height="156px"></span>
+                                        <span><img src="assets/images/section-subscribe-short2.jpg" alt="" width="108.33px" height="156px"></span>
                                         <p>미니멀라이프 10년차 방심하면 물건은 또 쌓이더라고요.  그래서 중요한 건 비워야 할 타이밍을 알고 그 비움을 미루지 않는 것!   초록이를 좋아해 화원에 가면 눈 돌아가지만 이젠 식물은 더 들이지 않기로 마음먹었어요.  쓰임 다한 빈 화분은 깨끗이 씻고, 사진 찍어 바로 나눔으로 비웠습니다.  ✔️ 죽은 식물은 종량제 봉투에 ✔️ 남은 흙은 따로 담아 불연성 폐기물로  베란다라는 공간도 불필요한 물건을 쌓아두지 않으니, 청소가 훨씬 편하고 공간도 제 역할을 제대로 해줘요.  🧹 만만한 청소를 원한다면 안쓰는 물건부터 비워보세요!</p>
                                         <span>니트영</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span><img src="assets/images/section_subScribe_short3.jpg" alt="" width="108.33px" height="156px"></span>
+                                        <span><img src="assets/images/section-subscribe-short3.jpg" alt="" width="108.33px" height="156px"></span>
                                         <p>형제들의 휴가</p>
                                         <span>우리집개새</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span><img src="assets/images/section_subScribe_short4.jpg" alt="" width="108.33px" height="156px"></span>
+                                        <span><img src="assets/images/section-subscribe-short4.jpg" alt="" width="108.33px" height="156px"></span>
                                         <p>깨순무침 이렇게 해보세요 깻잎 김치보다 맛있어 밑반찬으로 그만입니다 (재료) 깨순 - 150g 양파 - 1/2개 당근 - 조금(30g) (양념) 고춧가루 - 2큰술 양조간장 - 1.5큰술 멸치액젓 - 1큰술 매실청 - 2큰술 참기름 - 1큰술 통깨 - 1큰술  #요리레시피 #깨순무침 # 깻잎김치</p>
                                         <span>요리남</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span><img src="assets/images/section_subScribe_short5.jpg" alt="" width="108.33px" height="156px"></span>
+                                        <span><img src="assets/images/section-subscribe-short5.jpg" alt="" width="108.33px" height="156px"></span>
                                         <p>여제의 출격 준비 완료!</p>
                                         <span>데일리런(DailyRun)</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span><img src="assets/images/section_subScribe_short6.jpg" alt="" width="108.33px" height="156px"></span>
+                                        <span><img src="assets/images/section-subscribe-short6.jpg" alt="" width="108.33px" height="156px"></span>
                                         <p>저는 오늘 과연 운동을 할수있을까요?😱</p>
                                         <span>수지맞은 우리</span>
                                     </a>
@@ -554,8 +555,8 @@
                 </div>
             </section>
         </div>
-        <div class="sectionRight">
-            <section class="sectionLogin">
+        <div class="section-right">
+            <section class="section-login">
                 <p>네이버를 더 안전하고 편리하게 이용하세요</p>
                 <a href="#"><i></i>로그인</a>
                 <nav>
@@ -566,15 +567,15 @@
                     </ul>
                 </nav>
             </section>
-            <section class="sectionBanners">
+            <section class="section-banners">
                 <a href="#" class="happybean">
-                    <img src="assets/images/section_happybean.jpg" alt="해피빈 배너" width="420" height="240" />
+                    <img src="assets/images/section-happybean.jpg" alt="해피빈 배너" width="420" height="240" />
                 </a>
                 <a href="#" class="store">
-                    <img src="assets/images/section_store.png" alt="스토어 배너" width="420" height="80" />
+                    <img src="assets/images/section-store.png" alt="스토어 배너" width="420" height="80" />
                 </a>
             </section>
-            <section class="sectionMostItems">
+            <section class="section-most-items">
                 <div>
                     <h2>많이 찾는 아이템 추천해요</h2>
                     <a href="#" aria-label="광고 노출 관련 안내로 이동">AD</a>
@@ -585,34 +586,34 @@
                     <div>
                         <article>
                             <div>
-                                <img src="assets/images/section_mostItem1.jpg" alt="프레임바이 애플 펜슬 펜촉 3개입, 듀얼 더블 팁 스타터팩" width="90" height="90">
+                                <img src="assets/images/section-mostItem1.jpg" alt="프레임바이 애플 펜슬 펜촉 3개입, 듀얼 더블 팁 스타터팩" width="90" height="90">
                             </div>
                             <p>프레임바이 애플 펜슬 펜촉 3개입 스타터팩 듀얼 더블 팁 FRAME TIP 프레임팁</p>
                         </article>
                         <article>
                             <div>
-                                <img src="assets/images/section_mostItem2.jpg" alt="크루거 계란 찜기 에그쿠거 미니 계란찜기" width="90" height="90">
+                                <img src="assets/images/section-mostItem2.jpg" alt="크루거 계란 찜기 에그쿠거 미니 계란찜기" width="90" height="90">
                             </div>
                             <p>크루거 계란 찜기 삶는 기계 에그쿠커 미니 2단 계란찜기 오연수</p>
                         </article>
                         <article>
                             <div>
-                                <img src="assets/images/section_mostItem3.png" alt="몽비오스 EMF 킹분리난방 탄소 전기매트 장판" width="90" height="90">
+                                <img src="assets/images/section-mostItem3.png" alt="몽비오스 EMF 킹분리난방 탄소 전기매트 장판" width="90" height="90">
                             </div>
                             <p>몽비오스 EMF 킹분리난방 탄소 전기매트 장판</p>
                         </article>
                     </div>
                 </div>
             </section>
-            <section class="sectionWeather">
-                <div class="weather_top">
+            <section class="section-weather">
+                <div class="weather-top">
                     <div>
                         <h2><a href="#">날씨</a></h2>
                         <a href="#">예보 비교</a>
                     </div>
                     <p>안산시 일동</p>
                 </div>
-                <div class="weather_btm">
+                <div class="weather-btm">
                     <a href="#" aria-label="날씨 홈으로 이동">
                         <span>
                             <i></i>
@@ -661,8 +662,8 @@
                     </a>
                 </div>
             </section>
-            <section class="sectionStock">
-                <div class="stock_top">
+            <section class="section-stock">
+                <div class="stock-top">
                     <div>
                         <h2><a href="#">증시 <i></i></a></h2>
                     </div>
@@ -674,7 +675,7 @@
                         <button type="button" aria-label="새로고침"></button>
                     </div>
                 </div>
-                <div class="stock_btm">
+                <div class="stock-btm">
                     <div>
                         <a href="#">
                             <span>환율 USD</span>
@@ -685,7 +686,7 @@
                                     <span>-0.51%</span>
                                 </span>
                             </span>
-                            <img src="assets/images/section_usd.png" alt="환율 USD 그래프 이미지" width="180" height="44" />
+                            <img src="assets/images/section-usd.png" alt="환율 USD 그래프 이미지" width="180" height="44" />
                             <span>3개월 차트</span>
                         </a>
                         <a href="#">
@@ -697,7 +698,7 @@
                                     <span>+0.37%</span>
                                 </span>
                             </span>
-                            <img src="assets/images/section_euro.png" alt="유로스톡스50 그래프 이미지" width="180" height="72" />
+                            <img src="assets/images/section-euro.png" alt="유로스톡스50 그래프 이미지" width="180" height="72" />
                         </a>
                         <a href="#">
                             <span>독일</span>
@@ -708,7 +709,7 @@
                                     <span>+0.22%</span>
                                 </span>
                             </span>
-                            <img src="assets/images/section_germany.png" alt="독일 그래프 이미지" width="180" height="72" />
+                            <img src="assets/images/section-germany.png" alt="독일 그래프 이미지" width="180" height="72" />
                         </a>
                     </div>
                     <div>
@@ -756,16 +757,16 @@
                     </div>
                 </div>
             </section>
-            <section class="sectionMbti">
+            <section class="section-mbti">
                 <a href="#">
                     <h2>MBTI별 최악의 연애 상대</h2>
                     <div>
-                        <img src="assets/images/section_mbti.jpg" alt="mbti 이미지" width="195" height="130" />
+                        <img src="assets/images/section-mbti.jpg" alt="mbti 이미지" width="195" height="130" />
                         <div><p>궁합이 궁금하다면?</p></div>
                     </div>
                     <div>
                         <div>
-                            <img src="assets/images/section_mbti_icon.png" alt="가연결혼정보 마크" width="22" height="22" />
+                            <img src="assets/images/section-mbti-icon.png" alt="가연결혼정보 마크" width="22" height="22" />
                             <span>가연결혼정보</span>
                         </div>
                         <p>더 알아보기<i></i></p>
@@ -773,7 +774,7 @@
                     <div>AD</div>
                 </a>
             </section>
-            <section class="sectionWidget">
+            <section class="section-widget">
                 <div>
                     <h2>위젯 보드</h2>
                     <div>
@@ -864,21 +865,21 @@
                         <ul>
                             <li>
                                 <a href="">
-                                    <img src="assets/images/section_widget1.png" alt="뱃 속 아가와 함께 듣는 싱잉볼" width="108" height="126" />
+                                    <img src="assets/images/section-widget1.png" alt="뱃 속 아가와 함께 듣는 싱잉볼" width="108" height="126" />
                                     <span>뱃 속 아가와 함께 듣는 싱잉볼</span>
                                     <div><i></i></div>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="assets/images/section_widget2.png" alt="지독하게 우울하다면" width="108" height="126" />
+                                    <img src="assets/images/section-widget2.png" alt="지독하게 우울하다면" width="108" height="126" />
                                     <span>지독하게 우울하다면</span>
                                     <div><i></i></div>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="assets/images/section_widget3.png" alt="싱잉볼 릴렉스 힐링 테라피" width="108" height="126" />
+                                    <img src="assets/images/section-widget3.png" alt="싱잉볼 릴렉스 힐링 테라피" width="108" height="126" />
                                     <span>싱잉볼 릴렉스 힐링 테라피</span>
                                     <div><i></i></div>
                                 </a>
@@ -893,11 +894,11 @@
                     </span>
                     <span></span>
                 </a>
-                <button type="button"></button>
+                <button type="button" aria-label="다음 페이지"></button>
             </section>
-            <section class="sectionSale">
+            <section class="section-sale">
                 <a href="#">
-                    <img src="assets/images/section_sale.png" alt="15% 세일 이미지" width="42" height="42" />
+                    <img src="assets/images/section-sale.png" alt="15% 세일 이미지" width="42" height="42" />
                     <div>
                         <p>혜택력이 초강력 강세일</p>
                         <span>매일 선착순 15% 쿠폰</span>
@@ -906,15 +907,15 @@
             </section>
         </div>
         <div class="floating">
-            <a href="#"></a>
-            <button type="button"></button>
-            <div>
+            <a href="#" aria-label="최상단으로 이동"></a>
+            <button type="button" class="prefer-btn" aria-label="환경 설정 버튼" aria-haspopup="dialog" aria-expanded="false" aria-controls="prefer-dialog"></button>
+            <dialog id="prefer-dialog">
                 <div>
                     <div>
                         <h2>글자 크기</h2>
                         <ul>
                             <li>
-                                <button type="button">
+                                <button type="button" class="prefer-text-btn">
                                     <span>
                                         <span>가</span>
                                         <span>Aa</span>
@@ -923,7 +924,7 @@
                                 </button>
                             </li>
                             <li>
-                                <button type="button">
+                                <button type="button" class="prefer-text-btn">
                                     <span>
                                         <span>가</span>
                                         <span>Aa</span>
@@ -932,7 +933,7 @@
                                 </button>
                             </li>
                             <li>
-                                <button type="button">
+                                <button type="button" class="prefer-text-btn">
                                     <span>
                                         <span>가</span>
                                         <span>Aa</span>
@@ -945,16 +946,16 @@
                     <div>
                         <h2>
                             화면 스타일 
-                            <button type="button"></button>
-                            <div>
-                                <button type="button"></button>
+                            <button type="button" class="screen-style-info-btn" aria-label="화면 스타일 정보 버튼" aria-haspopup="dialog" aria-expanded="false" aria-controls="screen-style-info-dialog"></button>
+                            <dialog id="screen-style-info-dialog" role="dialog">
+                                <button type="button" class="dialog-close-btn" aria-label="닫기 버튼"></button>
                                 <p>PC 메인의 화면 스타일을 선택할 수 있습니다.</p>
                                 <p>'기기 설정'을 선택하면 사용 중인 기기의 설정에 따라 라이트/다크 모드로 자동 변경됩니다.</p>
-                            </div>
+                            </dialog>
                         </h2>
                         <ul>
                             <li>
-                                <button type="button">
+                                <button type="button" class="prefer-screen-btn">
                                     <span>
                                         <span></span>
                                         <span></span>
@@ -964,7 +965,7 @@
                                 </button>
                             </li>
                             <li>
-                                <button type="button">
+                                <button type="button" class="prefer-screen-btn">
                                     <span>
                                         <span></span>
                                         <span></span>
@@ -974,7 +975,7 @@
                                 </button>
                             </li>
                             <li>
-                                <button type="button">
+                                <button type="button" class="prefer-screen-btn">
                                     <span>
                                         <span></span>
                                         <span></span>
@@ -1000,17 +1001,17 @@
                         </span>
                     </a>
                 </div>
-            </div>
+            </dialog>
         </div>
     </main>
     <footer>
-        <div class="footer_layout">
-            <section class="footerTop">
+        <div class="footer-layout">
+            <section class="footer-top">
                 <ul>
                     <li>
                         <a href="#">
                             <div>
-                                <img src="assets/images/footer_top1.png" alt="써브웨이 이미지" width="160" height="100" />
+                                <img src="assets/images/footer-top1.png" alt="써브웨이 이미지" width="160" height="100" />
                                 <p>AD</p>
                             </div>
                             <div>
@@ -1027,7 +1028,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <div><img src="assets/images/footer_top2.png" alt="네이버 북카페 이미지" width="160" height="100" /></div>
+                            <div><img src="assets/images/footer-top2.png" alt="네이버 북카페 이미지" width="160" height="100" /></div>
                             <div>
                                 <p>네이버</p>
                                 <div>
@@ -1043,7 +1044,7 @@
                     <li>
                         <a href="#">
                             <div>
-                                <img src="assets/images/footer_top3.png" alt="네이버 커넥트재단 이미지" width="160" height="100" />
+                                <img src="assets/images/footer-top3.png" alt="네이버 커넥트재단 이미지" width="160" height="100" />
                             </div>
                             <div>
                                 <p>네이버 커넥트재단</p>
@@ -1059,7 +1060,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="footerMid">
+            <section class="footer-mid">
                 <div>
                     <a href="#">공지사항</a>
                     <a href="#">
@@ -1100,20 +1101,20 @@
                                     <p>웨일 브라우저</p>
                                     <a href="#">이용안내</a>
                                 </div>
-                                <a href="#"><img src="assets/images/footer_mid1.png" alt="네이버 웨일 이미지" width="48" height="48"></a>
+                                <a href="#"><img src="assets/images/footer-mid1.png" alt="네이버 웨일 이미지" width="48" height="48"></a>
                             </li>
                             <li>
                                 <div>
                                     <p>기업 사이트</p>
                                     <a href="#">바로가기</a>
                                 </div>
-                                <a href="#"><img src="assets/images/footer_mid2.png" alt="네이버 이미지" width="48" height="48"></a>
+                                <a href="#"><img src="assets/images/footer-mid2.png" alt="네이버 이미지" width="48" height="48"></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
-            <section class="footerBtm">
+            <section class="footer-btm">
                 <ul>
                     <li><a href="#">회사소개</a></li>
                     <li><a href="#">인재채용</a></li>
@@ -1128,5 +1129,6 @@
             </section>
         </div>
     </footer>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>
