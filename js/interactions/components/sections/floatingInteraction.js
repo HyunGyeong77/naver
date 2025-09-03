@@ -1,8 +1,20 @@
 export default function floatingInteraction() {
+    pageLoad();
     preferBtnClick();
     screenInfoBtnClick();
     preferTextBtnClick();
     preferScreenBtnClick();
+}
+
+function pageLoad() {
+    const html = document.querySelector("html");
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if(prefersDarkMode) {
+        html.setAttribute("dark-mode", true);
+    } else {
+        html.setAttribute("dark-mode", false);
+    }
 }
 
 const handleModalClick = (classBtn, classDialog, isModal) => {
@@ -63,7 +75,43 @@ const handleSelectBtnClick = (classBtn) => {
 
             item.classList.add("select");
 
-            console.log(item);
+            const html = document.querySelector("html");
+
+            if(item.className.includes("text")) {
+                html.classList.remove("font-small", "font-normal", "font-large");
+
+                switch(item.children[1].innerText) {
+                    case "축소":
+                        html.classList.add("font-small");
+                        break;
+                    case "기본":
+                        html.classList.add("font-normal");
+                        break;
+                    case "확대":
+                        html.classList.add("font-large");
+                        break;
+                }
+            } else {
+                switch(item.children[1].innerText) {
+                    case "라이트 모드":
+                        html.setAttribute("dark-mode", false);
+                        break;
+                    case "다크 모드":
+                        html.setAttribute("dark-mode", true);
+                        break;
+                    case "기기 설정":
+                        pageLoad();
+                        break;
+                }
+
+                const advertImg = document.querySelector(".btm-advert").querySelector("img");
+
+                if(html.getAttribute("dark-mode") === "true") {
+                    advertImg.setAttribute("src", "assets/images/header-advert-dark.png");
+                } else {
+                    advertImg.setAttribute("src", "assets/images/header-advert.png");
+                }
+            }
         });
     })
 }
