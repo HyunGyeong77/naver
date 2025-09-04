@@ -1,20 +1,44 @@
 export default function floatingInteraction() {
-    pageLoad();
-    preferBtnClick();
     screenInfoBtnClick();
-    preferTextBtnClick();
-    preferScreenBtnClick();
+    prefer();
 }
 
-function pageLoad() {
+const darkCheck = () => {
     const html = document.querySelector("html");
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if(prefersDarkMode) {
-        html.setAttribute("dark-mode", true);
-    } else {
-        html.setAttribute("dark-mode", false);
+    const darkImg = (element, path) => {
+        if(html.getAttribute("dark-mode") === "true") {
+            element.setAttribute("src", "assets/images/" + path + "-dark.png");
+        } else {
+            element.setAttribute("src", "assets/images/" + path + ".png");
+        }
     }
+
+    const arrImgsPush = (className, element) => {
+        document.querySelectorAll(className).forEach(item => {
+            element.push(item.querySelector("img"));
+        });
+    }
+    const stockImg = [];
+    const newsImg = [];
+    const newsPaths = [
+        "sports-chosun", "moneytoday", "daily-sports", "mbc",
+        "channel", "ohmynews", "segye-ilbo", "asiatoday", "pressian",
+        "herald", "korean-economy", "nocutnews", "joongang-daily",
+        "jtbc", "seoul-economy", "gyeonggi-ilbo", "gyeongin-ilbo",
+        "incheon-ilbo", "kyunghyang", "newdaily", "newsen", "daily-economy",
+        "ebs", "korea-ilbo"
+    ]
+    
+    arrImgsPush(".stock-link", stockImg);
+    arrImgsPush(".news-link", newsImg);
+
+    const headerAdvertImg = document.querySelector(".btm-advert").querySelector("img");
+    darkImg(headerAdvertImg, "header-advert");
+    darkImg(stockImg[0], "section-usd");
+    newsImg.map((item, index) => {
+        darkImg(item, newsPaths[index]);
+    });
 }
 
 const handleModalClick = (classBtn, classDialog, isModal) => {
@@ -45,10 +69,76 @@ const handleModalClick = (classBtn, classDialog, isModal) => {
     });
 }
 
-function preferBtnClick() {
-    let isModal = {value: false};
+function prefer() {
+    const handleSelectBtnClick = (classBtn) => {
+        const btns = document.querySelectorAll(classBtn);
+    
+        btns.forEach(item => {
+            item.addEventListener("click", () => {
+                btns.forEach(item => {
+                    item.classList.remove("select");
+                });
+    
+                item.classList.add("select");
+    
+                const html = document.querySelector("html");
+    
+                if(item.className.includes("text")) {
+                    html.classList.remove("font-small", "font-normal", "font-large");
+    
+                    switch(item.children[1].innerText) {
+                        case "축소":
+                            html.classList.add("font-small");
+                            break;
+                        case "기본":
+                            html.classList.add("font-normal");
+                            break;
+                        case "확대":
+                            html.classList.add("font-large");
+                            break;
+                    }
+                } else {
+                    switch(item.children[1].innerText) {
+                        case "라이트 모드":
+                            html.setAttribute("dark-mode", false);
+                            break;
+                        case "다크 모드":
+                            html.setAttribute("dark-mode", true);
+                            break;
+                        case "기기 설정":
+                            const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    handleModalClick(".prefer-btn", "prefer-dialog", isModal);
+                            if(prefersDarkMode) {
+                                html.setAttribute("dark-mode", true);
+                            } else {
+                                html.setAttribute("dark-mode", false);
+                            }
+                            break;
+                    }
+
+                    darkCheck();
+                }
+            });
+        })
+    }
+
+    const preferTextBtnClick = () => {
+        handleSelectBtnClick(".prefer-text-btn");
+    }
+
+    const preferScreenBtnClick = () => {
+        handleSelectBtnClick(".prefer-screen-btn");
+    }
+
+    const preferBtnClick = () => {
+        let isModal = {value: false};
+
+        handleModalClick(".prefer-btn", "prefer-dialog", isModal);
+    }
+
+    preferTextBtnClick();
+    preferScreenBtnClick();
+    preferBtnClick();
 }
 
 function screenInfoBtnClick() {
@@ -62,64 +152,4 @@ function screenInfoBtnClick() {
     });
 
     handleModalClick(".screen-style-info-btn", "screen-style-info-dialog", isModal);
-}
-
-const handleSelectBtnClick = (classBtn) => {
-    const btns = document.querySelectorAll(classBtn);
-
-    btns.forEach(item => {
-        item.addEventListener("click", () => {
-            btns.forEach(item => {
-                item.classList.remove("select");
-            });
-
-            item.classList.add("select");
-
-            const html = document.querySelector("html");
-
-            if(item.className.includes("text")) {
-                html.classList.remove("font-small", "font-normal", "font-large");
-
-                switch(item.children[1].innerText) {
-                    case "축소":
-                        html.classList.add("font-small");
-                        break;
-                    case "기본":
-                        html.classList.add("font-normal");
-                        break;
-                    case "확대":
-                        html.classList.add("font-large");
-                        break;
-                }
-            } else {
-                switch(item.children[1].innerText) {
-                    case "라이트 모드":
-                        html.setAttribute("dark-mode", false);
-                        break;
-                    case "다크 모드":
-                        html.setAttribute("dark-mode", true);
-                        break;
-                    case "기기 설정":
-                        pageLoad();
-                        break;
-                }
-
-                const advertImg = document.querySelector(".btm-advert").querySelector("img");
-
-                if(html.getAttribute("dark-mode") === "true") {
-                    advertImg.setAttribute("src", "assets/images/header-advert-dark.png");
-                } else {
-                    advertImg.setAttribute("src", "assets/images/header-advert.png");
-                }
-            }
-        });
-    })
-}
-
-function preferTextBtnClick() {
-    handleSelectBtnClick(".prefer-text-btn");
-}
-
-function preferScreenBtnClick() {
-    handleSelectBtnClick(".prefer-screen-btn");
 }
