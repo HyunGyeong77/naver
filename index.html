@@ -75,44 +75,36 @@
         <div class="section-left">
             <section>
                 <a href="#" style="display:block; height:130px">
-                    <img src="assets/images/section-banner.jpg" alt="배너 이미지" width="830" height="130" style="border-radius:8px" />
+                    <img src="assets/images/section-banner.jpg" alt="배너 이미지" width="100%" height="130" style="border-radius:8px" />
                 </a>
             </section>
             <section class="section-news">
                 <div class="news-top">
                     <ul>
                         <li>
-                            <button type="button">뉴스스탠드</button>
-                            <button type="button">언론사편집</button>
+                            <button class="select" type="button" data-value="news">뉴스스탠드</button>
+                            <button type="button" data-value="edit">언론사편집</button>
                         </li>
-                        <li><button type="button">엔터</button></li>
+                        <li><button type="button" data-value="enter">엔터</button></li>
                         <li>
-                            <button type="button">
-                                <span>스포츠</span>
+                            <button type="button" data-value="sport">
+                                <span class="sports-text">스포츠</span>
                                 <span>
                                     <i></i>
                                     <span>LIVE</span>
                                 </span>
                             </button>
                         </li>
-                        <li><button type="button">경제</button></li>
-                        <li><button type="button">쇼핑투데이</button></li>
+                        <li><button type="button" data-value="economy">경제</button></li>
+                        <li><button type="button" data-value="shopping">쇼핑투데이</button></li>
                     </ul>
                     <section class="news">
                         <div>
                             <div>
-                                <button>
+                                <button type="button">
                                     <span>전체언론사</span>
                                     <i></i>
                                 </button>
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span>구독언론사</span>
-                                            <span>보기</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                             <div>
                                 <a href="#">연합뉴스</a>
@@ -152,19 +144,36 @@
                             <li><a href="#" class="news-link"><img src="assets/images/korea-ilbo.png" alt="한국일보 이미지" height="20px"></a><div><a href="#">구독</a><a href="#">기사보기</a></div></li>
                         </ul>
                     </section>
-                    <section class="edit">
+                    <section class="edit none">
+                        <div>
+                            <div>
+                                <button>
+                                    <span>분야별 뉴스</span>
+                                    <i></i>
+                                </button>
+                            </div>
+                            <div>
+                                <a href="#">MBC</a>
+                                <ul>
+                                    <li><a href="#">'해군함정 선상파티' 의혹 김건희·김성훈 수사</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <a href="#">뉴스스탠드</a>
+                                <a href="#">뉴스홈</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="enter none">
 
                     </section>
-                    <section class="enter">
+                    <section class="sports none">
 
                     </section>
-                    <section class="sports">
-
-                    </section>
-                    <section class="economy">
+                    <section class="economy none">
                         
                     </section>
-                    <section class="shopping">
+                    <section class="shopping none">
 
                     </section>
                 </div>
@@ -581,24 +590,24 @@
                     <button aria-label="이전 버튼"><i></i></button>
                     <button aria-label="다음 버튼"><i></i></button>
                     <div>
-                        <article>
-                            <div>
+                        <a href="#">
+                            <span>
                                 <img src="assets/images/section-mostItem1.jpg" alt="프레임바이 애플 펜슬 펜촉 3개입, 듀얼 더블 팁 스타터팩" width="90" height="90">
-                            </div>
-                            <p>프레임바이 애플 펜슬 펜촉 3개입 스타터팩 듀얼 더블 팁 FRAME TIP 프레임팁</p>
-                        </article>
-                        <article>
-                            <div>
+                            </span>
+                            <span>프레임바이 애플 펜슬 펜촉 3개입 스타터팩 듀얼 더블 팁 FRAME TIP 프레임팁</span>
+                        </a>
+                        <a href="#">
+                            <span>
                                 <img src="assets/images/section-mostItem2.jpg" alt="크루거 계란 찜기 에그쿠거 미니 계란찜기" width="90" height="90">
-                            </div>
-                            <p>크루거 계란 찜기 삶는 기계 에그쿠커 미니 2단 계란찜기 오연수</p>
-                        </article>
-                        <article>
-                            <div>
+                            </span>
+                            <span>크루거 계란 찜기 삶는 기계 에그쿠커 미니 2단 계란찜기 오연수</span>
+                        </a>
+                        <a href="#">
+                            <span>
                                 <img src="assets/images/section-mostItem3.png" alt="몽비오스 EMF 킹분리난방 탄소 전기매트 장판" width="90" height="90">
-                            </div>
-                            <p>몽비오스 EMF 킹분리난방 탄소 전기매트 장판</p>
-                        </article>
+                            </span>
+                            <span>몽비오스 EMF 킹분리난방 탄소 전기매트 장판</span>
+                        </a>
                     </div>
                 </div>
             </section>
