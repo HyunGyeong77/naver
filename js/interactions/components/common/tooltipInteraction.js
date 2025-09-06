@@ -85,7 +85,7 @@ function headerToolTip() {
 }
 
 function newsToolTip() {
-    const buttons = document.querySelector(".news-top").querySelector("li:first-child").querySelectorAll("button");
+    const buttons = document.querySelector(".section-news ul").querySelector("li:first-child").querySelectorAll("button");
     const buttonsTxt = [
         "예전 PC와 동일한 방식으로 보기",
         "모바일과 동일한 방식으로 보기"
