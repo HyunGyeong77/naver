@@ -27,14 +27,19 @@ function menuClick() {
                 const data2 = await response2.text();
 
                 document.querySelector(`.${value}-top`).insertAdjacentHTML('beforeend', data2);
+
+                const sectionNewsChildren = Array.from(document.querySelector(".section-news").children);
+                const filterChildren = sectionNewsChildren.slice(1);
+                const oldDivs = filterChildren.filter(item => !item.className.includes(value));
+
+                
+                oldDivs.map((item => item.remove()));
+                newDivs.map(item => item.classList.remove("hidden"));
+
             } catch (error) {
                 console.error("오류 발생 :", error);
             }
         }
-        
-        document.querySelectorAll(".section-news div").forEach(item => {
-            item.remove();
-        });
 
         pageChange(`components/section/news/${value}.html`, `components/section/news/page/${value}-page1.html`);
     }
