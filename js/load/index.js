@@ -4,6 +4,6 @@ export default function initLoads() {
     newsLoad();
     
     setTimeout(() => {
-        document.querySelector("body").classList.remove("hidden");
+        document.querySelector("body").removeAttribute('class');
     }, 40);
 }
