@@ -3,7 +3,7 @@ export default function floatingInteraction() {
     prefer();
 }
 
-const darkCheck = () => {
+export const darkCheck = () => {
     const html = document.querySelector("html");
 
     const darkImg = (element, path) => {
@@ -98,15 +98,24 @@ function prefer() {
                             break;
                     }
                 } else {
+                    const html = document.querySelector("html");
+                    const darkmode = html.getAttribute("dark-mode");
+
                     switch(item.children[1].innerText) {
                         case "라이트 모드":
+                            if(darkmode === "false") return;
+
                             html.setAttribute("dark-mode", false);
                             break;
                         case "다크 모드":
+                            if(darkmode === "true") return;
+
                             html.setAttribute("dark-mode", true);
                             break;
                         case "기기 설정":
                             const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                            if(darkmode === prefersDarkMode.toString()) return;
 
                             if(prefersDarkMode) {
                                 html.setAttribute("dark-mode", true);

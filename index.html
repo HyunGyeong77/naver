@@ -81,12 +81,12 @@
             <section class="section-news">
                 <ul>
                     <li>
-                        <button class="select" type="button" data-value="news">뉴스스탠드</button>
-                        <button type="button" data-value="edit">언론사편집</button>
+                        <button class="select" role="tab" type="button" data-value="news" aria-selected="true">뉴스스탠드</button>
+                        <button type="button" role="tab" data-value="edit" aria-selected="false">언론사편집</button>
                     </li>
-                    <li><button type="button" data-value="enter">엔터</button></li>
+                    <li><button type="button" role="tab" data-value="enter" aria-selected="false">엔터</button></li>
                     <li>
-                        <button type="button" data-value="sport">
+                        <button type="button" role="tab" data-value="sport" aria-selected="false">
                             <span class="sports-text">스포츠</span>
                             <span>
                                 <i></i>
@@ -94,8 +94,8 @@
                             </span>
                         </button>
                     </li>
-                    <li><button type="button" data-value="economy">경제</button></li>
-                    <li><button type="button" data-value="shopping">쇼핑투데이</button></li>
+                    <li><button type="button" role="tab" data-value="economy" aria-selected="false">경제</button></li>
+                    <li><button type="button" role="tab" data-value="shopping" aria-selected="false">쇼핑투데이</button></li>
                 </ul>
             </section>
             <section class="section-shoppings">
