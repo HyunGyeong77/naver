@@ -33,6 +33,19 @@ export const darkCheck = () => {
     arrImgsPush(".stock-link", stockImg);
     arrImgsPush(".news-link", newsImg);
 
+    const newsPageList = document.querySelector(".news-page-list");
+
+    if(newsPageList) {
+        const img = newsPageList.querySelector(".newsstand");
+        let fileName = img.getAttribute("src").split("/").pop().split(".")[0];
+
+        if(fileName.includes("-dark")) {
+            fileName = fileName.split("-dark").shift();
+        }
+
+        darkImg(img, fileName);
+    }
+
     const headerAdvertImg = document.querySelector(".btm-advert").querySelector("img");
     darkImg(headerAdvertImg, "header-advert");
     darkImg(stockImg[0], "section-usd");

@@ -13,7 +13,9 @@ function headerToolTip() {
     const handleBtnEnter = (txt, index) => (e) => {
         /** @type {HTMLElement} */
         const target = e.currentTarget;
-        const nextChild = target.nextChild;
+        
+        if(target.children[0] instanceof HTMLButtonElement &&
+            target.children[0].getAttribute("aria-expanded") === "true") return;
 
         if(target.querySelector(".tooltip")) return;
         if(timer) clearTimeout(timer);
@@ -23,7 +25,7 @@ function headerToolTip() {
             div.textContent = txt[index];
             div.className = "tooltip";
 
-            target.insertBefore(div, nextChild);
+            target.insertAdjacentElement('beforeend', div);
         }, 100);
     }
 
@@ -52,19 +54,19 @@ function headerToolTip() {
         /** @type {HTMLElement} */
         const target = e.currentTarget;
         const parent = target.parentNode;
-
-        if(parent.querySelector(".tooltip")) return;
-
+    
+        if(parent.querySelector(".tooltip") || target.getAttribute("aria-expanded") === "true") return;
+    
         const div = document.createElement("div");
         div.textContent = txt[index];
         div.className = "tooltip";
-
+    
         parent.insertBefore(div, target);
     }
-
+    
     const handleBlur = (e) => {
         const tooltip = e.currentTarget.parentNode.querySelector(".tooltip");
-
+    
         if(tooltip) {
             tooltip.remove();
         }

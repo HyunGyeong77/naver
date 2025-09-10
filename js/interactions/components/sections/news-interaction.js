@@ -1,4 +1,4 @@
-import {darkCheck} from './floatingInteraction.js';
+import {darkCheck} from './floating-interaction.js';
 
 export default function newsInteraction() {
     menuClick();
@@ -73,6 +73,14 @@ function listClick() {
             notCheckEle.setAttribute("aria-checked", false);
         }
 
+        const newsBtmChange = (title, totalPage) => {
+            const btmTitle = document.querySelector(".news-btm-title");
+            const btmTotalPage = document.querySelector(".news-btm-total-page");
+
+            btmTitle.textContent = title;
+            btmTotalPage.textContent = totalPage;
+        }
+
         newsList.addEventListener("click", function() {
             if(this.getAttribute("aria-checked") === "true") return;
 
@@ -97,18 +105,45 @@ function listClick() {
                     item.addEventListener("click", function() {
                         Array.from(newPageTypeBtn).filter(item => item !== this).forEach(item => item.setAttribute("aria-selected", false));
                         this.setAttribute("aria-selected", true);
+
+                        const dataValue = this.getAttribute("data-value");
+
+                        const pageChange = async (mainPath) => {
+                            const response = await fetch(mainPath);
+                            const data = await response.text();
+
+                            const newsPageList = document.querySelector(".news-page-list");
+                            newsPageList.insertAdjacentHTML('beforeend', data);
+
+                            const newPage = newsPageList.querySelector(`.news-list-${dataValue}1`);
+                            newPage.classList.add("hidden");
+
+                            requestAnimationFrame(() => {
+                                const oldDiv = newsPageList.children[1];
+                                oldDiv.remove();
+
+                                darkCheck();
+
+                                const btmTitle = document.querySelector(".news-btm-title");
+                                const btmTotalPage = document.querySelector(".news-btm-total-page");
+
+                                btmTitle.textContent = this.textContent + btmTitle.textContent.replace(btmTitle.textContent.split(" ")[0], "");
+                                btmTotalPage.textContent = this.getAttribute("data-total-number");
+
+                                newPage.classList.remove("hidden");
+                            });
+                        }
+
+                        pageChange(`components/section/news/page/list/news-list-${dataValue}1.html`);
                     });
                 });
 
+                darkCheck();
+
                 requestAnimationFrame(() => {
-                    const btmTitle = document.querySelector(".news-btm-title");
-                    const btmTotalPage = document.querySelector(".news-btm-total-page");
-
-                    btmTitle.textContent = "종합/경제 언론사 뉴스";
-                    btmTotalPage.textContent = "/83";
-
                     newsTop.querySelector(del).remove();
                     newPage.classList.remove("hidden");
+                    newsBtmChange("종합/경제 언론사 뉴스", "/83");
                 });
             }
 
@@ -129,15 +164,12 @@ function listClick() {
                 const newPage = newsTop.querySelector(".news-page");
                 newPage.classList.add("hidden");
 
+                darkCheck();
+
                 requestAnimationFrame(() => {
-                    const btmTitle = document.querySelector(".news-btm-title");
-                    const btmTotalPage = document.querySelector(".news-btm-total-page");
-
-                    btmTitle.textContent = "언론사";
-                    btmTotalPage.textContent = "/4";
-
                     newsTop.querySelector(del).remove();
                     newPage.classList.remove("hidden");
+                    newsBtmChange("언론사", "/4");
                 });
             }
 

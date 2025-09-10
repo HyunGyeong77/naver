@@ -45,10 +45,12 @@
   --color-live-bg2: #eb5b5b;
   --color-purple: #9858f5;
   --color-scrollbar-thumb:#cbcbcb;
+  --color-scrollbar-thumb-hover:#606060;
   --color-scrollbar-track:#f3f3f3;
   --color-button-bg-hover:#fbfbfc;
   --color-button-arrow-hover:#2a2c2f;
   --color-weather-button-bg-hover:#f8f8f8;
+  --color-news-list-button-bg:#fff;
   --color-floating-button-bg-hover:#f7f7f8;
   --color-edit-subscribe-bg-hover:#eff3fd;
   --color-trot-bg:#fff;
@@ -59,6 +61,10 @@
   --color-economy-text:#008f76;
   --color-economy-calender:#eb5b5b;
   --color-shopping-text:#9858f5;
+  --color-dialog-header:#fff;
+  --color-dialog-bg:#f8fbfc;
+  --color-dialog-title-bg:#eef2f9;
+  --color-dialog-section-number:#477ee3;
 }
 
 :root[dark-mode=true] {
@@ -99,7 +105,14 @@
   --color-economy-text:#3fd7bc;
   --color-economy-calender:#f08484;
   --color-shopping-text:#b077ff;
-  --color-scrollbar-track:#272829;
+  --color-scrollbar-track:#2d2e2f;
+  --color-scrollbar-thumb:#515254;
+  --color-scrollbar-thumb-hover:#cbcbcb;
+  --color-news-list-button-bg:#313233;
+  --color-dialog-bg:#272829;
+  --color-dialog-title-bg:#3c3d3e;
+  --color-dialog-section-number:#88aae9;
+  --color-dialog-header:#272829;
 }
 
 .header-top {
@@ -630,6 +643,389 @@
   bottom: 16px;
   font-size: 16px;
   line-height: 16px;
+}
+
+.hamburger-dialog {
+  position: relative;
+  top: 6px;
+  left: -5px;
+  width: 420px;
+  height: 740px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px 5px #eaebec;
+  background: #eaeef3;
+  overflow: hidden;
+  z-index: 20;
+}
+.hamburger-dialog::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_main.6bbd194f.png);
+  background-size: 468px 456px;
+  background-position: -203px -301px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 13px;
+}
+.hamburger-dialog::after {
+  position: absolute;
+  top: -13px;
+  left: 18px;
+}
+.hamburger-dialog > div {
+  overflow-y: auto;
+  height: 100%;
+}
+.hamburger-dialog > div > div {
+  background: var(--color-dialog-bg);
+}
+.hamburger-dialog > div > div:first-child, .hamburger-dialog > div > div:nth-child(2) {
+  padding-inline: 20px;
+  padding-block: 20px;
+}
+.hamburger-dialog > div > div:first-child {
+  position: sticky;
+  top: 0;
+  background: var(--color-dialog-bg);
+  z-index: 10;
+}
+.hamburger-dialog > div > div:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-border-line);
+}
+.hamburger-dialog > div > div:first-child > h2 {
+  font-size: 16px;
+  color: var(--color-black);
+}
+.hamburger-dialog > div > div:nth-child(2) {
+  padding-bottom: 30px;
+  background-image: linear-gradient(to bottom, #fff, #f8fbfc);
+}
+.hamburger-dialog > div > div:nth-child(2) > a {
+  display: flex;
+  align-items: center;
+  font-size: 16.8px;
+  letter-spacing: -1px;
+}
+.hamburger-dialog > div > div:nth-child(2) > a > span {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.hamburger-dialog > div > div:nth-child(2) > a > span::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -94px -159px;
+  background-repeat: no-repeat;
+  width: 7px;
+  height: 12px;
+}
+.hamburger-dialog > div > div:nth-child(2) > a > span::before {
+  margin-left: 3px;
+  transform: translateY(1px);
+}
+.hamburger-dialog > div > div:nth-child(2) > ul {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 15px;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span {
+  display: flex;
+  justify-content: center;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child {
+  position: relative;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: 0 -106px;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -53px 0;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::before, .hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::after {
+  position: absolute;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::after {
+  opacity: 0.1;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child > img {
+  z-index: 1;
+}
+.hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:last-child {
+  font-size: 12.8px;
+  letter-spacing: -1px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm {
+  margin-top: 13px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-inline: 20px;
+  padding-top: 23px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > strong {
+  color: var(--color-black);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > a {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 14.4px;
+  line-height: 26px;
+  letter-spacing: -1px;
+  color: var(--color-caption);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > a::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -207px -135px;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > a::before {
+  transform: translateY(1px);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > a > span {
+  color: var(--color-caption);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-inline: 13px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section {
+  box-shadow: 0 0px 4px 2px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section > div:first-child {
+  background: var(--color-dialog-title-bg);
+  padding-inline: 18px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section > div:first-child > strong {
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section > div:first-child > strong > span {
+  padding-left: 2px;
+  color: var(--color-dialog-section-number);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  padding: 15px 20px 18px 15px;
+  background: var(--color-news-list-button-bg);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span {
+  display: flex;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child {
+  position: relative;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -159px -98px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -196px -61px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::before, .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::after {
+  position: absolute;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::after {
+  opacity: 0.1;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child > img {
+  position: relative;
+  z-index: 1;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:last-child {
+  font-size: 14.4px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child {
+  padding-block: 8px;
+  background: var(--color-news-list-button-bg);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div {
+  font-size: 14px;
+  font-weight: bold;
+  padding-inline: 18px;
+  padding-block: 10px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-block: 10px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -159px -98px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -196px -61px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::before, .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::after {
+  position: absolute;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::after {
+  opacity: 0.1;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::after {
+  position: absolute;
+  top: 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child > img {
+  position: relative;
+  z-index: 1;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:last-child {
+  font-size: 14.4px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child {
+  padding-top: 48px;
+  padding-bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child > ul {
+  display: flex;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child > ul:nth-child(2) > li:nth-child(2) > a {
+  font-weight: bold;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child > ul > li:not(:first-child) > a::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin-inline: 7px;
+  background: var(--color-slash);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child > ul > li > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: -1px;
+  color: var(--color-login-font);
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child > a {
+  margin-top: 12px;
+}
+.hamburger-dialog > div > div.hamburger-dialog-btm > div:last-child > a::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: 0 -159px;
+  background-repeat: no-repeat;
+  width: 74px;
+  height: 14px;
 }
 
 .main {
@@ -1887,6 +2283,9 @@
   align-items: center;
   gap: 4.8px;
 }
+.section-news > ul > li:nth-child(3) > button > span:first-child {
+  color: var(--color-login-font);
+}
 .section-news > ul > li:nth-child(3) > button > span:last-child {
   display: flex;
   gap: 3.2px;
@@ -1929,6 +2328,10 @@
 }
 .section-news > ul > li > button.select > .tooltip {
   font-weight: normal;
+}
+.section-news > ul > li > button.select > span:first-child {
+  color: var(--color-black);
+  font-weight: bold;
 }
 .section-news > ul > li > button > .tooltip {
   color: var(--color-black);
@@ -2220,46 +2623,65 @@
   display: flex;
 }
 .section-news > .news-top > .news-page-list > div:first-child {
+  position: relative;
   width: 150px;
   height: 224px;
-  overflow-y: auto;
-  border-radius: 5px;
   margin-right: 20px;
+  border-radius: 4px;
+  background: var(--color-news-list-button-bg);
 }
-.section-news > .news-top > .news-page-list > div:first-child::-webkit-scrollbar {
+.section-news > .news-top > .news-page-list > div:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  display: block;
+  border: 1px solid var(--color-box-border);
+  border-radius: 4px;
+}
+.section-news > .news-top > .news-page-list > div:first-child > div {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.section-news > .news-top > .news-page-list > div:first-child > div::-webkit-scrollbar {
   width: 14px;
 }
-.section-news > .news-top > .news-page-list > div:first-child::-webkit-scrollbar-thumb {
+.section-news > .news-top > .news-page-list > div:first-child > div::-webkit-scrollbar-thumb {
   border-radius: 15px;
   border: 3px solid transparent;
   background-color: var(--color-scrollbar-thumb);
   background-clip: padding-box;
 }
-.section-news > .news-top > .news-page-list > div:first-child::-webkit-scrollbar-track {
+.section-news > .news-top > .news-page-list > div:first-child > div::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-scrollbar-thumb-hover);
+}
+.section-news > .news-top > .news-page-list > div:first-child > div::-webkit-scrollbar-track {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   background: var(--color-scrollbar-track);
 }
-.section-news > .news-top > .news-page-list > div:first-child > ul {
-  border: 1px solid var(--color-border-line);
+.section-news > .news-top > .news-page-list > div:first-child > div ul {
   border-radius: 5px;
+  height: 224px;
 }
-.section-news > .news-top > .news-page-list > div:first-child > ul > li > button {
+.section-news > .news-top > .news-page-list > div:first-child > div ul > li > button {
   position: relative;
   display: flex;
   width: 100%;
   padding-inline: 20px;
+  padding-block: 15px;
   border-radius: 3px;
 }
-.section-news > .news-top > .news-page-list > div:first-child > ul > li > button[aria-selected=true] {
+.section-news > .news-top > .news-page-list > div:first-child > div ul > li > button[aria-selected=true] {
+  align-items: center;
+  justify-content: space-between;
   background: #3a67ea;
   box-shadow: 0px 0px 5px 4px rgba(58, 103, 234, 0.24);
 }
-.section-news > .news-top > .news-page-list > div:first-child > ul > li > button[aria-selected=true] > strong {
+.section-news > .news-top > .news-page-list > div:first-child > div ul > li > button[aria-selected=true] > strong {
   color: white;
 }
-.section-news > .news-top > .news-page-list > div:first-child > ul > li > button[aria-selected=true] > i {
-  position: absolute;
+.section-news > .news-top > .news-page-list > div:first-child > div ul > li > button[aria-selected=true] > i {
   right: 20px;
   top: 20px;
   width: 8px;
@@ -2269,12 +2691,13 @@
   opacity: 0.6;
   transform: rotate(45deg);
 }
-.section-news > .news-top > .news-page-list > div:first-child > ul > li > button > strong {
+.section-news > .news-top > .news-page-list > div:first-child > div ul > li > button > strong {
   font-size: 1rem;
-  line-height: 50px;
+  line-height: 20px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color: var(--color-black);
 }
 .section-news > .news-top > .news-page-list > div:last-child {
   flex: 1;
@@ -2283,7 +2706,7 @@
 .section-news > .news-top > .news-page-list > div:last-child > div:first-child {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .section-news > .news-top > .news-page-list > div:last-child > div:first-child > p {
   display: inline-block;
@@ -2330,26 +2753,53 @@
 }
 .section-news > .news-top > .news-page-list > div:last-child > div:last-child {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 .section-news > .news-top > .news-page-list > div:last-child > div:last-child > a {
   display: flex;
   width: 201px;
   flex-direction: column;
+  gap: 10px;
 }
-.section-news > .news-top > .news-page-list > div:last-child > div:last-child > a > span {
-  font-size: 0.8rem;
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > a:hover > span:first-child > img {
+  scale: 1.05;
+}
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > a > span:first-child {
+  width: 201px;
+  height: 134px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > a > span:first-child > img {
+  transition: scale 0.2s;
+}
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > a > span:last-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.9rem;
+  line-height: 18px;
+}
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > a > span:last-child:hover {
+  text-decoration: underline;
 }
 .section-news > .news-top > .news-page-list > div:last-child > div:last-child > ul {
   overflow: hidden;
 }
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > ul > li:not(:first-child) {
+  margin-block: 7px;
+}
 .section-news > .news-top > .news-page-list > div:last-child > div:last-child > ul > li > a {
   display: inline-block;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.section-news > .news-top > .news-page-list > div:last-child > div:last-child > ul > li > a:hover {
+  text-decoration: underline;
 }
 .section-news > .news-btm > div:first-child > p > span:first-child {
   color: var(--color-news-text);
@@ -4714,6 +5164,48 @@ html[dark-mode=true] .header-btm > .btm-menu-wrap > ul > li > .btm-ad > i::after
   background-repeat: no-repeat;
   width: 26px;
   height: 22px;
+}
+html[dark-mode=true] .hamburger-dialog {
+  box-shadow: 0 0 0 1px #383c3c, 0 4px 12px 0 rgba(0, 0, 0, 0.5);
+  background: #28292b;
+}
+html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) {
+  background-image: none;
+}
+html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_aside_e12492f2.png);
+  background-size: 232px 204px;
+  background-position: -196px -61px;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+}
+html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::before, html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::after {
+  position: absolute;
+}
+html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::before {
+  opacity: 0.08;
+}
+html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) > ul > li > a > span:first-child::after {
+  filter: invert(1) opacity(0.02);
+}
+html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm {
+  position: relative;
+}
+html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-border-line);
+}
+html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > a::before {
+  filter: grayscale(1) invert(0.85);
 }
 html[dark-mode=true] .floating > a::after {
   content: "";

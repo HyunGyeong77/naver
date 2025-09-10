@@ -1,4 +1,4 @@
-import newsLoad from './components/sections/newsLoad.js';
+import newsLoad from './components/sections/news-load.js';
 
 export default function initLoads() {
     newsLoad();
