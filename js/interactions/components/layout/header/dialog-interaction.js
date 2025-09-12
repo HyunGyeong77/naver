@@ -1,20 +1,43 @@
 export default function dialogInteraction() {
-    const buttons = document.querySelector(".header-top").querySelectorAll('[class*="area"] button');
-    let isOpen = false;
+    const buttons = document.querySelector(".header-top").querySelectorAll('[class*=area] > button');
+    let isOpen = Array.from(buttons.length).fill(false);
 
-    buttons.forEach(item => {
-        item.addEventListener("click", function() {
-            const dialog = this.nextElementSibling;
+    const documentClick = (item, index) => (e) => {
+        /** @type {HTMLElement} */
+        const target = e.target;
+        const dialog = item.nextElementSibling;
+        const parent = item.parentNode;
+
+        if(parent && dialog) {
+            if(parent.contains(target)) return;
+
+            item.setAttribute("aria-expanded", "false");
+            isOpen[index] = false;
+            dialog.remove();
+        }
+    }
+
+    buttons.forEach((item, index) => {
+        item.addEventListener("click", async function() {
+            const response = await fetch(`components/header/${item.id}.html`);
+            const data = await response.text();
+
             const tooltip = this.parentNode.querySelector(".tooltip");
 
-            isOpen = !isOpen;
-            this.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            isOpen[index] = !isOpen[index];
+            this.setAttribute("aria-expanded", isOpen[index] ? "true" : "false");
 
-            if(isOpen) {
-                tooltip.remove();
+            if(isOpen[index]) {
+                if(tooltip) {
+                    tooltip.remove();  
+                }
+
+                this.insertAdjacentHTML('afterend', data);
+                document.addEventListener("click", documentClick(this, index));
+            } else {
+                this.nextElementSibling.remove();
+                document.removeEventListener("click", documentClick);
             }
-
-            dialog.open = isOpen;
         });
     });
 }

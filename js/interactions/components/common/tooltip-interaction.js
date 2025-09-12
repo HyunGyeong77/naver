@@ -6,7 +6,7 @@ export default function tooltipInteraction() {
 }
 
 function headerToolTip() {
-    const area = document.querySelector(".header-top").querySelectorAll('[class*="area"]');
+    const area = document.querySelector(".header-top").querySelectorAll('[class*=area]');
     const areaTxt = ["바로가기", "네이버페이", "네이버톡", "알림", "장바구니"];
     let timer;
 
@@ -45,8 +45,8 @@ function headerToolTip() {
         item.addEventListener("mouseleave", handleBtnLeave);
     });
 
-    const buttons = document.querySelector(".header-top").querySelectorAll('[class*="area"] button');
-    const aTags = document.querySelector(".header-top").querySelectorAll('[class*="area"] a');
+    const buttons = document.querySelector(".header-top").querySelectorAll('[class*=area] > button');
+    const aTags = document.querySelector(".header-top").querySelectorAll('[class*=area] > a');
     const buttonsTxt = areaTxt.filter((_, index) => index !== 1 && index !== 4);
     const aTagsTxt = areaTxt.filter((_, index) => index === 1 || index === 4);
 

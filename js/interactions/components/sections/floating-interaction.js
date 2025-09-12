@@ -14,6 +14,16 @@ export const darkCheck = () => {
         }
     }
 
+    const srcFileName = (img) => {
+        let fileName = img.getAttribute("src").split("/").pop().split(".")[0];
+
+        if(fileName.includes("-dark")) {
+            fileName = fileName.split("-dark").shift();
+        }
+
+        return fileName;
+    }
+
     const arrImgsPush = (className, element) => {
         document.querySelectorAll(className).forEach(item => {
             element.push(item.querySelector("img"));
@@ -33,17 +43,18 @@ export const darkCheck = () => {
     arrImgsPush(".stock-link", stockImg);
     arrImgsPush(".news-link", newsImg);
 
-    const newsPageList = document.querySelector(".news-page-list");
+    const hamburgerDialog = document.querySelector(".hamburger-dialog");
+    const dialogImgs = hamburgerDialog.querySelectorAll('[class*=wrap] > img');
+    dialogImgs.forEach(item => {
+        console.log(item);
+        darkImg(item, srcFileName(item));
+    });
 
+    const newsPageList = document.querySelector(".news-page-list");
     if(newsPageList) {
         const img = newsPageList.querySelector(".newsstand");
-        let fileName = img.getAttribute("src").split("/").pop().split(".")[0];
 
-        if(fileName.includes("-dark")) {
-            fileName = fileName.split("-dark").shift();
-        }
-
-        darkImg(img, fileName);
+        darkImg(img, srcFileName(img));
     }
 
     const headerAdvertImg = document.querySelector(".btm-advert").querySelector("img");

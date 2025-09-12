@@ -62,9 +62,10 @@
   --color-economy-calender:#eb5b5b;
   --color-shopping-text:#9858f5;
   --color-dialog-header:#fff;
-  --color-dialog-bg:#f8fbfc;
+  --color-dialog-bg:#fff;
   --color-dialog-title-bg:#eef2f9;
   --color-dialog-section-number:#477ee3;
+  --color-dialog-talk-bg:#f1f3f8;
 }
 
 :root[dark-mode=true] {
@@ -113,38 +114,48 @@
   --color-dialog-title-bg:#3c3d3e;
   --color-dialog-section-number:#88aae9;
   --color-dialog-header:#272829;
+  --color-dialog-talk-bg:#3e3e41;
 }
 
 .header-top {
   display: flex;
   justify-content: space-between;
 }
-.header-top > div > .top-hamburger-area > button,
-.header-top > div > .top-pay-area > a {
+.header-top > div:first-child > .top-hamburger-area > button,
+.header-top > div:first-child > .top-pay-area > a {
   position: relative;
   padding: 8px;
 }
-.header-top > div > .top-hamburger-area > button:hover::before,
-.header-top > div > .top-pay-area > a:hover::before {
+.header-top > div:first-child > .top-hamburger-area > button::before,
+.header-top > div:first-child > .top-pay-area > a::before {
   content: "";
   position: absolute;
   inset: 0;
   width: 48px;
   height: 48px;
-  background: var(--color-icon-bg);
   border-radius: 50%;
 }
-.header-top > div > .top-hamburger-area,
-.header-top > div > .top-pay-area {
+.header-top > div:first-child > .top-hamburger-area > button:hover::before,
+.header-top > div:first-child > .top-pay-area > a:hover::before {
+  content: "";
+  background: var(--color-icon-bg);
+}
+.header-top > div:first-child > .top-hamburger-area > button[aria-expanded=true]::before,
+.header-top > div:first-child > .top-pay-area > a[aria-expanded=true]::before {
+  content: "";
+  background: #e7eced;
+}
+.header-top > div:first-child > .top-hamburger-area,
+.header-top > div:first-child > .top-pay-area {
   position: absolute;
 }
-.header-top > div > .top-hamburger-area {
+.header-top > div:first-child > .top-hamburger-area {
   left: -19.2px;
 }
-.header-top > div > .top-hamburger-area > .tooltip::after {
+.header-top > div:first-child > .top-hamburger-area > .tooltip::after {
   left: 25%;
 }
-.header-top > div > .top-hamburger-area > button::after {
+.header-top > div:first-child > .top-hamburger-area > button::after {
   content: "";
   display: block;
   position: relative;
@@ -155,16 +166,16 @@
   width: 32px;
   height: 32px;
 }
-.header-top > div > .top-pay-area {
+.header-top > div:first-child > .top-pay-area {
   left: 33.6px;
 }
-.header-top > div > .top-pay-area > .tooltip::after {
+.header-top > div:first-child > .top-pay-area > .tooltip::after {
   left: 29%;
 }
-.header-top > div > .top-pay-area > a {
+.header-top > div:first-child > .top-pay-area > a {
   display: block;
 }
-.header-top > div > .top-pay-area > a::after {
+.header-top > div:first-child > .top-pay-area > a::after {
   content: "";
   display: block;
   position: relative;
@@ -175,29 +186,36 @@
   width: 32px;
   height: 32px;
 }
-.header-top > ul > li {
+.header-top > div:last-child > div {
   position: absolute;
 }
-.header-top > ul > li > button, .header-top > ul > li > a {
+.header-top > div:last-child > div > button, .header-top > div:last-child > div > a {
   position: relative;
   padding: 8px;
 }
-.header-top > ul > li > button:hover::before, .header-top > ul > li > a:hover::before {
+.header-top > div:last-child > div > button::before, .header-top > div:last-child > div > a::before {
   content: "";
   position: absolute;
   inset: 0;
   width: 48px;
   height: 48px;
-  background: var(--color-icon-bg);
   border-radius: 50%;
 }
-.header-top > ul > .top-talk-area {
+.header-top > div:last-child > div > button:hover::before, .header-top > div:last-child > div > a:hover::before {
+  content: "";
+  background: var(--color-icon-bg);
+}
+.header-top > div:last-child > div > button[aria-expanded=true]::before, .header-top > div:last-child > div > a[aria-expanded=true]::before {
+  content: "";
+  background: #e7eced;
+}
+.header-top > div:last-child > .top-talk-area {
   right: 100.8px;
 }
-.header-top > ul > .top-talk-area > .tooltip::after {
+.header-top > div:last-child > .top-talk-area > .tooltip::after {
   left: 26%;
 }
-.header-top > ul > .top-talk-area > button::after {
+.header-top > div:last-child > .top-talk-area > button::after {
   content: "";
   display: block;
   position: relative;
@@ -208,13 +226,13 @@
   width: 32px;
   height: 32px;
 }
-.header-top > ul > .top-noti-area {
+.header-top > div:last-child > .top-noti-area {
   right: 48.8px;
 }
-.header-top > ul > .top-noti-area > .tooltip::after {
+.header-top > div:last-child > .top-noti-area > .tooltip::after {
   left: 16%;
 }
-.header-top > ul > .top-noti-area > button::after {
+.header-top > div:last-child > .top-noti-area > button::after {
   content: "";
   display: block;
   position: relative;
@@ -225,16 +243,16 @@
   width: 32px;
   height: 32px;
 }
-.header-top > ul > .top-shop-area {
+.header-top > div:last-child > .top-shop-area {
   right: -3.2px;
 }
-.header-top > ul > .top-shop-area > .tooltip::after {
+.header-top > div:last-child > .top-shop-area > .tooltip::after {
   left: 27%;
 }
-.header-top > ul > .top-shop-area > a {
+.header-top > div:last-child > .top-shop-area > a {
   display: block;
 }
-.header-top > ul > .top-shop-area > a::after {
+.header-top > div:last-child > .top-shop-area > a::after {
   content: "";
   display: block;
   position: relative;
@@ -646,68 +664,22 @@
 }
 
 .hamburger-dialog {
-  position: relative;
-  top: 6px;
   left: -5px;
-  width: 420px;
-  height: 740px;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 3px 5px 5px #eaebec;
-  background: #eaeef3;
-  overflow: hidden;
-  z-index: 20;
 }
 .hamburger-dialog::after {
-  content: "";
-  display: block;
-  position: relative;
-  background-image: url(/naver/assets/images/sp_main.6bbd194f.png);
-  background-size: 468px 456px;
-  background-position: -203px -301px;
-  background-repeat: no-repeat;
-  width: 22px;
-  height: 13px;
-}
-.hamburger-dialog::after {
-  position: absolute;
-  top: -13px;
   left: 18px;
 }
-.hamburger-dialog > div {
-  overflow-y: auto;
-  height: 100%;
-}
-.hamburger-dialog > div > div {
-  background: var(--color-dialog-bg);
-}
-.hamburger-dialog > div > div:first-child, .hamburger-dialog > div > div:nth-child(2) {
-  padding-inline: 20px;
-  padding-block: 20px;
-}
 .hamburger-dialog > div > div:first-child {
-  position: sticky;
-  top: 0;
-  background: var(--color-dialog-bg);
-  z-index: 10;
-}
-.hamburger-dialog > div > div:first-child::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--color-border-line);
+  padding-block: 20px;
 }
 .hamburger-dialog > div > div:first-child > h2 {
   font-size: 16px;
-  color: var(--color-black);
 }
 .hamburger-dialog > div > div:nth-child(2) {
   padding-bottom: 30px;
   background-image: linear-gradient(to bottom, #fff, #f8fbfc);
+  padding-inline: 20px;
+  padding-block: 20px;
 }
 .hamburger-dialog > div > div:nth-child(2) > a {
   display: flex;
@@ -851,6 +823,7 @@
 .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section > div:first-child > strong {
   font-size: 14px;
   letter-spacing: -0.5px;
+  color: var(--color-black);
 }
 .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section > div:first-child > strong > span {
   padding-left: 2px;
@@ -1026,6 +999,118 @@
   background-repeat: no-repeat;
   width: 74px;
   height: 14px;
+}
+
+.talk-dialog {
+  left: -310px;
+}
+.talk-dialog::after {
+  right: 75px;
+}
+.talk-dialog > div > div {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 15px;
+}
+.talk-dialog > div > div > h2 {
+  position: relative;
+  top: -3px;
+  font-size: 18px;
+}
+.talk-dialog > div > div > ul {
+  display: flex;
+  gap: 16px;
+}
+.talk-dialog > div > div > ul > li:nth-child(2) > button {
+  color: var(--color-black);
+}
+.talk-dialog > div > div > ul > li:nth-child(2) > button > svg > path:nth-child(3) {
+  fill: white;
+}
+.talk-dialog > div > section {
+  background: var(--color-white);
+}
+.talk-dialog > div > section:nth-child(2) > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  padding-block: 13px;
+}
+.talk-dialog > div > section:nth-child(2) > div:first-child > p {
+  font-size: 16px;
+}
+.talk-dialog > div > section:nth-child(2) > div:first-child > p > span {
+  font-weight: bold;
+}
+.talk-dialog > div > section:nth-child(2) > div:first-child > button {
+  border: 1px solid var(--color-green);
+  padding-inline: 13px;
+  padding-block: 6px;
+  border-radius: 5px;
+  color: var(--color-green);
+  font-weight: 600;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-dialog-talk-bg);
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) {
+  padding-block: 12px;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button {
+  border: 1px solid var(--color-button-border);
+  border-radius: 50px;
+  padding-inline: 10px;
+  padding-block: 6px;
+  font-size: 16px;
+  color: black;
+  background: white;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button.select {
+  color: white;
+  background: black;
+}
+.talk-dialog > div > section:nth-child(2) > div:last-child > div > div {
+  padding-inline: 20px;
+}
+.talk-dialog > div > section:nth-child(2) > div:last-child > div > div:first-child {
+  position: relative;
+  height: 100px;
+}
+.talk-dialog > div > section:nth-child(2) > div:last-child > div > div:first-child > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/naver/assets/images/pay-pointlab.png");
+  background-position: 100% 0;
+  background-size: 600px 100px;
+}
+.talk-dialog > div > section:nth-child(2) > div:last-child > div > div:first-child > strong {
+  position: relative;
+  top: 25px;
+}
+.talk-dialog > div > section:nth-child(2) > div:last-child > div > div:last-child {
+  margin-inline: 20px;
+  padding-block: 10px;
+  position: relative;
+  top: -30px;
+  height: 160px;
+  border: 1px solid var(--color-box-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+.talk-dialog > div > section:nth-child(2) > div:last-child > div > div:last-child > div > img {
+  border-radius: 50%;
 }
 
 .main {
@@ -5166,8 +5251,24 @@ html[dark-mode=true] .header-btm > .btm-menu-wrap > ul > li > .btm-ad > i::after
   height: 22px;
 }
 html[dark-mode=true] .hamburger-dialog {
-  box-shadow: 0 0 0 1px #383c3c, 0 4px 12px 0 rgba(0, 0, 0, 0.5);
   background: #28292b;
+}
+html[dark-mode=true] .hamburger-dialog::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_main.6bbd194f.png);
+  background-size: 468px 456px;
+  background-position: -270px -246px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 13px;
+}
+html[dark-mode=true] .hamburger-dialog::after {
+  position: absolute;
+}
+html[dark-mode=true] .hamburger-dialog > div {
+  box-shadow: 0 0 0 1px #383c3c, 0 4px 12px 0 rgba(0, 0, 0, 0.5);
 }
 html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) {
   background-image: none;
@@ -5206,6 +5307,15 @@ html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm::before 
 }
 html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:first-child > a::before {
   filter: grayscale(1) invert(0.85);
+}
+html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::before, html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::before {
+  opacity: 0.08;
+}
+html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:not(:last-child) > ul > li > a > span:first-child::after, html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:nth-child(2) > section:last-child > div:last-child > div > ul > li > a > span:first-child::after {
+  filter: invert(1) opacity(0.02);
+}
+html[dark-mode=true] .talk-dialog > div > div:first-child > ul > li:nth-child(2) > button > svg > path:nth-child(3) {
+  fill: black;
 }
 html[dark-mode=true] .floating > a::after {
   content: "";
@@ -5521,7 +5631,7 @@ main,
   font-size: 0.9rem;
   line-height: 38px;
   white-space: nowrap;
-  z-index: 1;
+  z-index: 25;
   color: var(--color-black);
 }
 .tooltip::after {
@@ -5539,4 +5649,66 @@ main,
   position: absolute;
   top: -11px;
   transform: rotate(180deg) translate(-50%);
+}
+
+.hamburger-dialog,
+.talk-dialog {
+  position: absolute;
+  top: 53px;
+  width: 420px;
+  height: 740px;
+  border: none;
+  background: #eaeef3;
+  z-index: 20;
+}
+.hamburger-dialog::after,
+.talk-dialog::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_main.6bbd194f.png);
+  background-size: 468px 456px;
+  background-position: -203px -301px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 13px;
+}
+.hamburger-dialog::after,
+.talk-dialog::after {
+  position: absolute;
+  top: -13px;
+}
+.hamburger-dialog > div,
+.talk-dialog > div {
+  overflow-y: auto;
+  border-radius: 8px;
+  height: 100%;
+  box-shadow: -1px 1px 5px 3px #eaebec;
+}
+.hamburger-dialog > div > div,
+.talk-dialog > div > div {
+  background: var(--color-dialog-bg);
+}
+.hamburger-dialog > div > div:first-child,
+.talk-dialog > div > div:first-child {
+  position: sticky;
+  top: 0;
+  background: var(--color-dialog-bg);
+  z-index: 10;
+  padding-inline: 20px;
+}
+.hamburger-dialog > div > div:first-child::after,
+.talk-dialog > div > div:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-border-line);
+}
+.hamburger-dialog > div > div:first-child > h2,
+.talk-dialog > div > div:first-child > h2 {
+  color: var(--color-black);
 }
