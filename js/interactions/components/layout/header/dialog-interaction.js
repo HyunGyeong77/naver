@@ -1,3 +1,6 @@
+import {talkInteraction} from './modal/talk-interaction.js';
+import {darkCheck} from '../../sections/floating-interaction.js';
+
 export default function dialogInteraction() {
     const buttons = document.querySelector(".header-top").querySelectorAll('[class*=area] > button');
     let isOpen = Array.from(buttons.length).fill(false);
@@ -29,14 +32,24 @@ export default function dialogInteraction() {
 
             if(isOpen[index]) {
                 if(tooltip) {
-                    tooltip.remove();  
+                    tooltip.remove();
                 }
 
                 this.insertAdjacentHTML('afterend', data);
                 document.addEventListener("click", documentClick(this, index));
+                
+                darkCheck();
+
+                if(item.id.includes("talk")) {
+                    talkInteraction(true);
+                }
             } else {
                 this.nextElementSibling.remove();
                 document.removeEventListener("click", documentClick);
+
+                if(item.id.includes("talk")) {
+                    talkInteraction(false);
+                }
             }
         });
     });

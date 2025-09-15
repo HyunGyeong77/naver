@@ -17,6 +17,7 @@
   --color-button-arrow: #80868c;
   --color-button-arrow2:rgba(211, 216, 222, .55);
   --color-icon-bg: #f5f7f8;
+  --color-icon-bg-hover:#e7eced;
   --color-button-arrow3: #f4f6fa;
   --color-button-arrow4: #f5f6f7;
   --color-footer-bg:#f5f6f7;
@@ -65,15 +66,24 @@
   --color-dialog-bg:#fff;
   --color-dialog-title-bg:#eef2f9;
   --color-dialog-section-number:#477ee3;
-  --color-dialog-talk-bg:#f1f3f8;
+  --color-dialog-talk-flicking-bg:#101010;
+  --color-dialog-talk-flicking-text:#fff;
+  --color-dialog-talk-bg:#e9edf3;
+  --color-dialog-talk-section:#f1f3f8;
   --color-dialog-talk-farm-bg:#eaf3ff;
   --color-dialog-talk-farm-text:#1e1e23cc;
+  --color-dialog-talk-notice:#ebebeb;
+  --color-dialog-talk-arrow:#c4c4c4;
+  --color-dialog-talk-new:#fe3b30;
+  --color-dialog-talk-logo:#c6cad3;
+  --color-dialog-notice-bg:#f5f6f8;
 }
 
 :root[dark-mode=true] {
   --color-black:white;
   --color-white:#101010;
   --color-icon-bg:#313233;
+  --color-icon-bg-hover:#3e3f40;
   --color-login-font:#b5b5b5;
   --color-section-bg:#272829;
   --color-ad-border:#383c3c;
@@ -116,9 +126,17 @@
   --color-dialog-title-bg:#3c3d3e;
   --color-dialog-section-number:#88aae9;
   --color-dialog-header:#272829;
-  --color-dialog-talk-bg:#3e3e41;
+  --color-dialog-talk-flicking-bg:#f0f0f2;
+  --color-dialog-talk-flicking-text:#39393c;
+  --color-dialog-talk-bg:#212223;
+  --color-dialog-talk-section:#212223;
   --color-dialog-talk-farm-bg:#48484b;
   --color-dialog-talk-farm-text:#f0f0f2cc;
+  --color-dialog-talk-notice:#595959;
+  --color-dialog-talk-arrow:#707070;
+  --color-dialog-talk-new:#ff6956;
+  --color-dialog-talk-logo:#454648;
+  --color-dialog-notice-bg:#272829;
 }
 
 .header-top {
@@ -147,7 +165,7 @@
 .header-top > div:first-child > .top-hamburger-area > button[aria-expanded=true]::before,
 .header-top > div:first-child > .top-pay-area > a[aria-expanded=true]::before {
   content: "";
-  background: #e7eced;
+  background: var(--color-icon-bg-hover);
 }
 .header-top > div:first-child > .top-hamburger-area,
 .header-top > div:first-child > .top-pay-area {
@@ -211,7 +229,7 @@
 }
 .header-top > div:last-child > div > button[aria-expanded=true]::before, .header-top > div:last-child > div > a[aria-expanded=true]::before {
   content: "";
-  background: #e7eced;
+  background: var(--color-icon-bg-hover);
 }
 .header-top > div:last-child > .top-talk-area {
   right: 100.8px;
@@ -1007,32 +1025,67 @@
 
 .talk-dialog {
   left: -310px;
+  background: var(--color-dialog-talk-bg);
 }
 .talk-dialog::after {
   right: 75px;
 }
-.talk-dialog > div > div {
+.talk-dialog > div > div:first-child {
   display: flex;
   justify-content: space-between;
   padding-block: 15px;
 }
-.talk-dialog > div > div > h2 {
+.talk-dialog > div > div:first-child > h2 {
   position: relative;
   top: -3px;
   font-size: 18px;
 }
-.talk-dialog > div > div > ul {
+.talk-dialog > div > div:first-child > ul {
   display: flex;
   gap: 16px;
 }
-.talk-dialog > div > div > ul > li:nth-child(2) > button {
+.talk-dialog > div > div:first-child > ul > li:nth-child(2) > button {
   color: var(--color-black);
 }
-.talk-dialog > div > div > ul > li:nth-child(2) > button > svg > path:nth-child(3) {
+.talk-dialog > div > div:first-child > ul > li:nth-child(2) > button > svg > path:nth-child(3) {
   fill: white;
 }
+.talk-dialog > div > div:last-child {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  background: var(--color-dialog-talk-bg);
+}
+.talk-dialog > div > div:last-child > ul {
+  display: flex;
+}
+.talk-dialog > div > div:last-child > ul > li:not(:first-child) > a::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  margin-inline: 10px;
+  background: var(--color-slash);
+}
+.talk-dialog > div > div:last-child > ul > li:first-child > a {
+  font-weight: bold;
+}
+.talk-dialog > div > div:last-child > ul > li > a {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.talk-dialog > div > div:last-child > ul > li > a > span {
+  color: var(--color-login-font);
+}
+.talk-dialog > div > div:last-child > a > svg {
+  fill: var(--color-dialog-talk-logo);
+}
 .talk-dialog > div > section {
-  background: var(--color-white);
+  background: var(--color-dialog-bg);
   margin-bottom: 10px;
 }
 .talk-dialog > div > section:nth-child(2) > div:last-child > div:last-child, .talk-dialog > div > section:nth-child(3) > div:last-child {
@@ -1041,6 +1094,7 @@
   align-items: center;
 }
 .talk-dialog > div > section:nth-child(2) > div:last-child > div:last-child > button, .talk-dialog > div > section:nth-child(3) > div:last-child > button {
+  color: var(--color-word-font);
   padding-inline: 20px;
 }
 .talk-dialog > div > section:nth-child(2) > div:last-child > div:last-child > button:first-child > svg, .talk-dialog > div > section:nth-child(3) > div:last-child > button:first-child > svg {
@@ -1087,26 +1141,34 @@
   padding-block: 12px;
   max-width: 600px;
   overflow: hidden;
-  padding-inline: 20px;
 }
 .talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul {
   position: relative;
   display: flex;
-  gap: 10px;
+  gap: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding-inline: 20px;
+  --translateX:0;
+  transform: translateX(var(--translateX));
 }
 .talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button {
   border: 1px solid var(--color-box-border);
-  border-radius: 50px;
+  border-radius: 70px;
   padding-inline: 15px;
   font-size: 15.5px;
-  line-height: 35px;
+  line-height: 37px;
   color: black;
   background: var(--color-section-bg);
   white-space: nowrap;
 }
-.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button.select {
-  color: white;
-  background: black;
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button[aria-selected=true] {
+  background: var(--color-dialog-talk-flicking-bg);
+  font-weight: bold;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button[aria-selected=true] > span {
+  color: var(--color-dialog-talk-flicking-text);
 }
 .talk-dialog > div > section:nth-child(2) > div:last-child {
   display: flex;
@@ -1186,7 +1248,7 @@
   margin-right: 2px;
   width: 4px;
   height: 4px;
-  background: var(--color-slash);
+  background: var(--color-box-border);
   border-radius: 50%;
 }
 .talk-dialog > div > section:nth-child(2) > div:last-child > div:first-child > div:last-child > ul {
@@ -1387,6 +1449,132 @@
   height: 4px;
   background: var(--color-slash);
   border-radius: 50%;
+}
+.talk-dialog > div > section:nth-child(5) > a {
+  display: flex;
+  justify-content: center;
+}
+.talk-dialog > div > section:nth-child(6) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-inline: 20px;
+  padding-block: 20px;
+}
+.talk-dialog > div > section:nth-child(6) > h2 {
+  font-size: 16px;
+  color: var(--color-black);
+}
+.talk-dialog > div > section:nth-child(6) > ul {
+  border: 1px solid var(--color-box-border);
+  border-radius: 9px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+.talk-dialog > div > section:nth-child(6) > ul > li:not(:last-child) > a > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-box-border);
+}
+.talk-dialog > div > section:nth-child(6) > ul > li > a {
+  display: block;
+}
+.talk-dialog > div > section:nth-child(6) > ul > li > a > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  letter-spacing: -1px;
+  margin-inline: 16px;
+  padding-block: 15px;
+}
+.talk-dialog > div > section:nth-child(6) > ul > li > a > span > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.talk-dialog > div > section:nth-child(6) > ul > li > a > span > span::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 2px;
+  background: var(--color-dialog-talk-notice);
+  border-radius: 50%;
+}
+.talk-dialog > div > section:nth-child(6) > ul > li > a > span > span > svg {
+  font-size: 10px;
+  color: var(--color-dialog-talk-new);
+}
+.talk-dialog > div > section:nth-child(6) > ul > li > a > span svg {
+  color: var(--color-dialog-talk-arrow);
+}
+
+.notice-dialog {
+  left: -360px;
+}
+.notice-dialog::after {
+  right: 25px;
+}
+.notice-dialog > div {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-dialog-notice-bg);
+}
+.notice-dialog > div > div:first-child {
+  padding-block: 15px;
+}
+.notice-dialog > div > div:first-child > h2 {
+  font-size: 18px;
+}
+.notice-dialog > div > div:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  background: var(--color-dialog-notice-bg);
+}
+.notice-dialog > div > div:last-child > i::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(/naver/assets/images/sp_notify_e96a4d91.png);
+  background-size: 253px 232px;
+  background-position: -98px -88px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.notice-dialog > div > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: center;
+}
+.notice-dialog > div > div:last-child > div > strong {
+  color: var(--color-black);
+}
+.notice-dialog > div > div:last-child > div > p > span {
+  display: block;
+  font-size: 14px;
+  color: var(--color-caption);
+}
+.notice-dialog > div > div:last-child > a {
+  margin-top: 7px;
+  background: #03a94d;
+  border-radius: 50px;
+  font-size: 14px;
+  padding-inline: 22px;
+  padding-block: 9px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: white;
 }
 
 .main {
@@ -2692,7 +2880,6 @@
 }
 .section-news > ul > li > button.select > span:first-child {
   color: var(--color-black);
-  font-weight: bold;
 }
 .section-news > ul > li > button > .tooltip {
   color: var(--color-black);
@@ -3413,7 +3600,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--color-slash);
 }
 .section-news > .enter-top > div:first-child > ul > li > a,
 .section-news > .sport-top > div:first-child > ul > li > a,
@@ -5381,7 +5568,7 @@ html[dark-mode=true] .tooltip::after {
   top: -11px;
   transform: rotate(180deg) translate(-50%);
 }
-html[dark-mode=true] .header-top > div > .top-hamburger-area > button::after {
+html[dark-mode=true] .header-top > div:first-child > div.top-hamburger-area > button::after {
   content: "";
   display: block;
   position: relative;
@@ -5392,7 +5579,7 @@ html[dark-mode=true] .header-top > div > .top-hamburger-area > button::after {
   width: 32px;
   height: 32px;
 }
-html[dark-mode=true] .header-top > div > .top-pay-area > a::after {
+html[dark-mode=true] .header-top > div:first-child > div.top-pay-area > a::after {
   content: "";
   display: block;
   position: relative;
@@ -5403,7 +5590,7 @@ html[dark-mode=true] .header-top > div > .top-pay-area > a::after {
   width: 32px;
   height: 32px;
 }
-html[dark-mode=true] .header-top > ul > li.top-talk-area > button::after {
+html[dark-mode=true] .header-top > div:last-child > div.top-talk-area > button::after {
   content: "";
   display: block;
   position: relative;
@@ -5414,7 +5601,7 @@ html[dark-mode=true] .header-top > ul > li.top-talk-area > button::after {
   width: 32px;
   height: 32px;
 }
-html[dark-mode=true] .header-top > ul > li.top-noti-area > button::after {
+html[dark-mode=true] .header-top > div:last-child > div.top-noti-area > button::after {
   content: "";
   display: block;
   position: relative;
@@ -5425,7 +5612,7 @@ html[dark-mode=true] .header-top > ul > li.top-noti-area > button::after {
   width: 32px;
   height: 32px;
 }
-html[dark-mode=true] .header-top > ul > li.top-shop-area > a::after {
+html[dark-mode=true] .header-top > div:last-child > div.top-shop-area > a::after {
   content: "";
   display: block;
   position: relative;
@@ -5526,10 +5713,14 @@ html[dark-mode=true] .header-btm > .btm-menu-wrap > ul > li > .btm-ad > i::after
   width: 26px;
   height: 22px;
 }
-html[dark-mode=true] .hamburger-dialog {
+html[dark-mode=true] .hamburger-dialog,
+html[dark-mode=true] .notice-dialog,
+html[dark-mode=true] .talk-dialog {
   background: #28292b;
 }
-html[dark-mode=true] .hamburger-dialog::after {
+html[dark-mode=true] .hamburger-dialog::after,
+html[dark-mode=true] .notice-dialog::after,
+html[dark-mode=true] .talk-dialog::after {
   content: "";
   display: block;
   position: relative;
@@ -5540,10 +5731,19 @@ html[dark-mode=true] .hamburger-dialog::after {
   width: 22px;
   height: 13px;
 }
-html[dark-mode=true] .hamburger-dialog::after {
+html[dark-mode=true] .hamburger-dialog.talk-dialog,
+html[dark-mode=true] .notice-dialog.talk-dialog,
+html[dark-mode=true] .talk-dialog.talk-dialog {
+  background: var(--color-dialog-talk-bg);
+}
+html[dark-mode=true] .hamburger-dialog::after,
+html[dark-mode=true] .notice-dialog::after,
+html[dark-mode=true] .talk-dialog::after {
   position: absolute;
 }
-html[dark-mode=true] .hamburger-dialog > div {
+html[dark-mode=true] .hamburger-dialog > div,
+html[dark-mode=true] .notice-dialog > div,
+html[dark-mode=true] .talk-dialog > div {
   box-shadow: 0 0 0 1px #383c3c, 0 4px 12px 0 rgba(0, 0, 0, 0.5);
 }
 html[dark-mode=true] .hamburger-dialog > div > div:nth-child(2) {
@@ -5592,6 +5792,11 @@ html[dark-mode=true] .hamburger-dialog > div > div.hamburger-dialog-btm > div:nt
 }
 html[dark-mode=true] .talk-dialog > div > div:first-child > ul > li:nth-child(2) > button > svg > path:nth-child(3) {
   fill: black;
+}
+html[dark-mode=true] .talk-dialog > div > section:nth-child(4) > ul, html[dark-mode=true] .talk-dialog > div > section:nth-child(6) > ul {
+  background: #313233;
+  border-color: #313233;
+  box-shadow: none;
 }
 html[dark-mode=true] .floating > a::after {
   content: "";
@@ -5928,17 +6133,20 @@ main,
 }
 
 .hamburger-dialog,
-.talk-dialog {
+.talk-dialog,
+.notice-dialog {
   position: absolute;
   top: 53px;
   width: 420px;
   height: 740px;
   border: none;
   background: #eaeef3;
+  border-radius: 8px;
   z-index: 20;
 }
 .hamburger-dialog::after,
-.talk-dialog::after {
+.talk-dialog::after,
+.notice-dialog::after {
   content: "";
   display: block;
   position: relative;
@@ -5949,24 +6157,33 @@ main,
   width: 22px;
   height: 13px;
 }
+.hamburger-dialog.talk-dialog,
+.talk-dialog.talk-dialog,
+.notice-dialog.talk-dialog {
+  background: var(--color-dialog-talk-bg);
+}
 .hamburger-dialog::after,
-.talk-dialog::after {
+.talk-dialog::after,
+.notice-dialog::after {
   position: absolute;
   top: -13px;
 }
 .hamburger-dialog > div,
-.talk-dialog > div {
+.talk-dialog > div,
+.notice-dialog > div {
   overflow-y: auto;
   border-radius: 8px;
   height: 100%;
   box-shadow: -1px 1px 5px 3px #eaebec;
 }
 .hamburger-dialog > div > div,
-.talk-dialog > div > div {
+.talk-dialog > div > div,
+.notice-dialog > div > div {
   background: var(--color-dialog-bg);
 }
 .hamburger-dialog > div > div:first-child,
-.talk-dialog > div > div:first-child {
+.talk-dialog > div > div:first-child,
+.notice-dialog > div > div:first-child {
   position: sticky;
   top: 0;
   background: var(--color-dialog-bg);
@@ -5974,7 +6191,8 @@ main,
   padding-inline: 20px;
 }
 .hamburger-dialog > div > div:first-child::after,
-.talk-dialog > div > div:first-child::after {
+.talk-dialog > div > div:first-child::after,
+.notice-dialog > div > div:first-child::after {
   content: "";
   position: absolute;
   left: 0;
@@ -5985,6 +6203,7 @@ main,
   background: var(--color-border-line);
 }
 .hamburger-dialog > div > div:first-child > h2,
-.talk-dialog > div > div:first-child > h2 {
+.talk-dialog > div > div:first-child > h2,
+.notice-dialog > div > div:first-child > h2 {
   color: var(--color-black);
 }

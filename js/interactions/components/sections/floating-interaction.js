@@ -5,23 +5,23 @@ export default function floatingInteraction() {
 
 export const darkCheck = () => {
     const html = document.querySelector("html");
+    const imgs = [];
 
-    const darkImg = (element, path) => {
-        if(html.getAttribute("dark-mode") === "true") {
-            element.setAttribute("src", "assets/images/" + path + "-dark.png");
-        } else {
-            element.setAttribute("src", "assets/images/" + path + ".png");
-        }
-    }
-
-    const srcFileName = (img) => {
-        let fileName = img.getAttribute("src").split("/").pop().split(".")[0];
+    const darkImgChange = (img) => {
+        const src = img.getAttribute("src");
+        let fileName = src.split("/").pop().split(".")[0];
+        const extension = src.split("/").pop().split(".")[1];
+        const path = src.split("/")[1];
 
         if(fileName.includes("-dark")) {
             fileName = fileName.split("-dark").shift();
         }
 
-        return fileName;
+        if(html.getAttribute("dark-mode") === "true") {
+            img.setAttribute("src", `assets/${path}/${fileName}-dark.${extension}`);
+        } else {
+            img.setAttribute("src", `assets/${path}/${fileName}.${extension}`);
+        }
     }
 
     const arrImgsPush = (className, element) => {
@@ -29,40 +29,41 @@ export const darkCheck = () => {
             element.push(item.querySelector("img"));
         });
     }
-    const stockImg = [];
-    const newsImg = [];
-    const newsPaths = [
-        "sports-chosun", "moneytoday", "daily-sports", "mbc",
-        "channel", "ohmynews", "segye-ilbo", "asiatoday", "pressian",
-        "herald", "korean-economy", "nocutnews", "joongang-daily",
-        "jtbc", "seoul-economy", "gyeonggi-ilbo", "gyeongin-ilbo",
-        "incheon-ilbo", "kyunghyang", "newdaily", "newsen", "daily-economy",
-        "ebs", "korea-ilbo"
-    ]
     
-    arrImgsPush(".stock-link", stockImg);
-    arrImgsPush(".news-link", newsImg);
+    arrImgsPush(".stock-link", imgs);
+    arrImgsPush(".news-link", imgs);
 
     const hamburgerDialog = document.querySelector(".hamburger-dialog");
-    const dialogImgs = hamburgerDialog.querySelectorAll('[class*=wrap] > img');
-    dialogImgs.forEach(item => {
-        console.log(item);
-        darkImg(item, srcFileName(item));
-    });
+    if(hamburgerDialog) {
+        const dialogImgs = hamburgerDialog.querySelectorAll('[class*=wrap] > img');
+
+        dialogImgs.forEach(item => {
+            imgs.push(item);
+        });
+    }
+
+    const talkDialog = document.querySelector(".talk-dialog");
+    if(talkDialog) {
+        const bannerImg = talkDialog.querySelector(".opentalk-banner img");
+        const talktip = talkDialog.querySelector(".talk-tip img");
+        const highlightImg = talkDialog.querySelector(".highlight-header img");
+        imgs.push(bannerImg, talktip, highlightImg);
+    }
 
     const newsPageList = document.querySelector(".news-page-list");
     if(newsPageList) {
         const img = newsPageList.querySelector(".newsstand");
-
-        darkImg(img, srcFileName(img));
+        imgs.push(img);
     }
 
     const headerAdvertImg = document.querySelector(".btm-advert").querySelector("img");
-    darkImg(headerAdvertImg, "header-advert");
-    darkImg(stockImg[0], "section-usd");
-    newsImg.map((item, index) => {
-        darkImg(item, newsPaths[index]);
-    });
+    if(headerAdvertImg) {
+        imgs.push(headerAdvertImg);
+    }
+
+    imgs.map(item => {
+        darkImgChange(item);
+    })
 }
 
 const handleModalClick = (classBtn, classDialog, isModal) => {
