@@ -23,7 +23,16 @@
 
 ## 🖥️ 화면 구성
 ### [메인 페이지]
-
+![메인 페이지](https://hyungyeong77.github.io/naver/assets/capture/mainPage.png)
+<br><br><br>
+### [플로팅 메뉴]
+![플로팅 메뉴](https://hyungyeong77.github.io/assets/capture/floating.png)
+<br><br><br>
+### [의료 뉴스 페이지]
+![의료 뉴스 페이지](https://hyungyeong77.github.io/hodadoc/images/medicalnewsPage.png)
+<br><br><br>
+### [고객 지원 페이지]
+![고객 지원 페이지](https://hyungyeong77.github.io/hodadoc/images/supportPage.png)
 
 
 ## 개발 과정에서 학습한 내용
