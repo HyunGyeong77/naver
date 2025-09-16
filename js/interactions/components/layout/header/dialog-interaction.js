@@ -41,15 +41,11 @@ export default function dialogInteraction() {
                 darkCheck();
 
                 if(item.id.includes("talk")) {
-                    talkInteraction(true);
+                    talkInteraction();
                 }
             } else {
                 this.nextElementSibling.remove();
                 document.removeEventListener("click", documentClick);
-
-                if(item.id.includes("talk")) {
-                    talkInteraction(false);
-                }
             }
         });
     });

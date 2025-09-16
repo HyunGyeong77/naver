@@ -61,9 +61,9 @@ export const darkCheck = () => {
         imgs.push(headerAdvertImg);
     }
 
-    imgs.map(item => {
-        darkImgChange(item);
-    })
+    // imgs.map(item => {
+    //     darkImgChange(item);
+    // });
 }
 
 const handleModalClick = (classBtn, classDialog, isModal) => {

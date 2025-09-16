@@ -1,21 +1,26 @@
 
+let sectionStartX;
+let headerStartX;
 
-export function talkInteraction(boolean) {
-    const menu = document.querySelector(".flicking-menu");
-    let startX;
+export function talkInteraction() {
+    const menu = document.querySelectorAll(".flicking-menu");
 
+    mouseEventRegistration(menu[1], sectionStartX);
+    mouseEventRegistration(menu[0], headerStartX);
+    scrollEvent(menu);
+}
+
+export function mouseEventRegistration(target, startX) {
     const handleMouseDown = (e) => {
-        const {clientX} = e;
+        const {clientX, currentTarget} = e;
         startX = clientX;
 
-        console.log("e");
-
-        menu.addEventListener("mousemove", handleMouseMove);
+        currentTarget.addEventListener("mousemove", handleMouseMove);
     }
 
     const handleMouseMove = (e) => {
-        const {clientX} = e;
-        const child = menu.children[0];
+        const {clientX, currentTarget} = e;
+        const child = currentTarget.children[0];
         const moveValue = (startX - clientX) > 0 ? -3 : 3;
         let translateX = Number(getComputedStyle(child).getPropertyValue("--translateX").replace("px", ""));
         translateX += moveValue;
@@ -27,16 +32,35 @@ export function talkInteraction(boolean) {
         if(translateX < -64) {
             translateX = -64;
         }
+
         child.style.setProperty("--translateX", `${translateX}px`);
-        console.log(translateX, moveValue);
-        
         document.addEventListener("mouseup", handleMouseUp);
     }
 
-    const handleMouseUp = () => {
-        menu.removeEventListener("mousemove", handleMouseMove);
+    const handleMouseUp = (e) => {
+        e.currentTarget.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
     }
 
-    boolean ? menu.addEventListener("mousedown", handleMouseDown) : menu.removeEventListener("mousedown", handleMouseDown);
+    target.addEventListener("mousedown", handleMouseDown);
+}
+
+function scrollEvent(menu) {
+    const dialog = document.querySelector(".talk-dialog");
+    const scroll = dialog.children[0];
+
+    let isProgress = false;
+
+    const handleScroll = () => {
+        if(isProgress) return;
+        isProgress = true;
+
+        requestAnimationFrame(() => {
+            const menuRect =  menu[1].getBoundingClientRect().top;
+            menu[0].classList.toggle("open", menuRect < 85);
+            isProgress = false;
+        });
+    }
+
+    scroll.addEventListener("scroll", handleScroll);
 }

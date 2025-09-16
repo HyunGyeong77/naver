@@ -85,13 +85,13 @@
   --color-icon-bg:#313233;
   --color-icon-bg-hover:#3e3f40;
   --color-login-font:#b5b5b5;
+  --color-border-line:#313334;
   --color-section-bg:#272829;
   --color-ad-border:#383c3c;
   --color-word-font:#f3f3f3;
   --color-button-arrow:#e0e5eb;
   --color-button-bg:#343638;
   --color-button-border:#515254;
-  --color-border-line:#313334;
   --color-slash:#747474;
   --color-widget-bg:#353637;
   --color-live-bg:#ff6956;
@@ -1030,25 +1030,86 @@
 .talk-dialog::after {
   right: 75px;
 }
-.talk-dialog > div > div:first-child {
+.talk-dialog > div {
+  overflow-x: hidden;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3),
+.talk-dialog > div > div:first-child > div:last-child {
+  padding-block: 12px;
+  max-width: 600px;
+  overflow: hidden;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul,
+.talk-dialog > div > div:first-child > div:last-child > ul {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding-inline: 20px;
+  --translateX:0;
+  transform: translateX(var(--translateX));
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button,
+.talk-dialog > div > div:first-child > div:last-child > ul > li > button {
+  border: 1px solid var(--color-box-border);
+  border-radius: 70px;
+  padding-inline: 15px;
+  font-size: 15.5px;
+  line-height: 37px;
+  color: black;
+  background: var(--color-section-bg);
+  white-space: nowrap;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button[aria-selected=true],
+.talk-dialog > div > div:first-child > div:last-child > ul > li > button[aria-selected=true] {
+  background: var(--color-dialog-talk-flicking-bg);
+  font-weight: bold;
+}
+.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button[aria-selected=true] > span,
+.talk-dialog > div > div:first-child > div:last-child > ul > li > button[aria-selected=true] > span {
+  color: var(--color-dialog-talk-flicking-text);
+}
+.talk-dialog > div > div:first-child > div:first-child {
+  background: var(--color-dialog-bg);
+}
+.talk-dialog > div > div:first-child > div:first-child > div {
   display: flex;
   justify-content: space-between;
   padding-block: 15px;
+  padding-inline: 20px;
 }
-.talk-dialog > div > div:first-child > h2 {
+.talk-dialog > div > div:first-child > div:first-child > div h2 {
   position: relative;
   top: -3px;
   font-size: 18px;
+  color: var(--color-black);
 }
-.talk-dialog > div > div:first-child > ul {
+.talk-dialog > div > div:first-child > div:first-child > div ul {
   display: flex;
   gap: 16px;
 }
-.talk-dialog > div > div:first-child > ul > li:nth-child(2) > button {
+.talk-dialog > div > div:first-child > div:first-child > div ul > li:nth-child(2) > button {
   color: var(--color-black);
 }
-.talk-dialog > div > div:first-child > ul > li:nth-child(2) > button > svg > path:nth-child(3) {
-  fill: white;
+.talk-dialog > div > div:first-child > div:first-child > div ul > li:nth-child(2) > button > svg > path:nth-child(3) {
+  fill: var(--color-white);
+}
+.talk-dialog > div > div:first-child > div:last-child {
+  position: absolute;
+  left: 0;
+  top: -10%;
+  background: var(--color-dialog-bg);
+  border-bottom: 1px solid var(--color-border-line);
+  transition: top 0.3s;
+  z-index: -1;
+}
+.talk-dialog > div > div:first-child > div:last-child.open {
+  top: 99%;
+}
+.talk-dialog > div > div:first-child > div:last-child > ul {
+  display: flex;
 }
 .talk-dialog > div > div:last-child {
   padding-top: 30px;
@@ -1109,6 +1170,9 @@
 .talk-dialog > div > section:nth-child(2) > div:last-child > div:last-child > p > span, .talk-dialog > div > section:nth-child(3) > div:last-child > p > span {
   color: var(--color-login-font);
 }
+.talk-dialog > div > section:nth-child(2) {
+  border-top: 1px solid var(--color-border-line);
+}
 .talk-dialog > div > section:nth-child(2) > div:first-child {
   display: flex;
   justify-content: space-between;
@@ -1136,39 +1200,6 @@
   width: 100%;
   height: 80px;
   background: var(--color-dialog-talk-bg);
-}
-.talk-dialog > div > section:nth-child(2) > div:nth-child(3) {
-  padding-block: 12px;
-  max-width: 600px;
-  overflow: hidden;
-}
-.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul {
-  position: relative;
-  display: flex;
-  gap: 5px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  padding-inline: 20px;
-  --translateX:0;
-  transform: translateX(var(--translateX));
-}
-.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button {
-  border: 1px solid var(--color-box-border);
-  border-radius: 70px;
-  padding-inline: 15px;
-  font-size: 15.5px;
-  line-height: 37px;
-  color: black;
-  background: var(--color-section-bg);
-  white-space: nowrap;
-}
-.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button[aria-selected=true] {
-  background: var(--color-dialog-talk-flicking-bg);
-  font-weight: bold;
-}
-.talk-dialog > div > section:nth-child(2) > div:nth-child(3) > ul > li > button[aria-selected=true] > span {
-  color: var(--color-dialog-talk-flicking-text);
 }
 .talk-dialog > div > section:nth-child(2) > div:last-child {
   display: flex;
@@ -6161,6 +6192,16 @@ main,
 .talk-dialog.talk-dialog,
 .notice-dialog.talk-dialog {
   background: var(--color-dialog-talk-bg);
+}
+.hamburger-dialog.talk-dialog > div > div:first-child,
+.talk-dialog.talk-dialog > div > div:first-child,
+.notice-dialog.talk-dialog > div > div:first-child {
+  padding-inline: 0;
+}
+.hamburger-dialog.talk-dialog > div > div:first-child::after,
+.talk-dialog.talk-dialog > div > div:first-child::after,
+.notice-dialog.talk-dialog > div > div:first-child::after {
+  display: none;
 }
 .hamburger-dialog::after,
 .talk-dialog::after,
