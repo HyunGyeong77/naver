@@ -23,7 +23,7 @@
 
 ## 🖥️ 화면 구성
 ### [메인 페이지]
-![메인 페이지](https://hyungyeong77.github.io/naver/assets/capture/mainPage.png)
+![메인 페이지](https://hyungyeong77.github.io/naver/assets/readme/main-page.png)
 <br><br><br>
 ### [플로팅 메뉴]
 ![플로팅 메뉴](https://hyungyeong77.github.io/naver/assets/readme/floating.gif) <br>
