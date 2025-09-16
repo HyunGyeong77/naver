@@ -176,5 +176,5 @@ function listClick() {
             ariaChecked(this, newsList);
             pageChange("components/section/news/page/news-page1.html", ".news-page-list");
         })
-    }, 60);
+    }, 100);
 }

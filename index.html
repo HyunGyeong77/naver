@@ -14,7 +14,7 @@
     <title>NAVER</title>
     <base href="/naver/" />
 
-    <link rel="shortcut icon" href="https://hyungyeong77.github.io/naver/favicon.ico" />
+    <link rel="icon" href="https://hyungyeong77.github.io/naver/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body class="hidden">
@@ -87,13 +87,13 @@
                 </a>
             </section>
             <section class="section-news">
-                <ul>
-                    <li>
+                <ul role="tablist">
+                    <li role="presentation">
                         <button class="select" role="tab" type="button" data-value="news" aria-selected="true">뉴스스탠드</button>
                         <button type="button" role="tab" data-value="edit" aria-selected="false">언론사편집</button>
                     </li>
-                    <li><button type="button" role="tab" data-value="enter" aria-selected="false">엔터</button></li>
-                    <li>
+                    <li role="presentation"><button type="button" role="tab" data-value="enter" aria-selected="false">엔터</button></li>
+                    <li role="presentation">
                         <button type="button" role="tab" data-value="sport" aria-selected="false">
                             <span class="sports-text">스포츠</span>
                             <span>
@@ -102,8 +102,8 @@
                             </span>
                         </button>
                     </li>
-                    <li><button type="button" role="tab" data-value="economy" aria-selected="false">경제</button></li>
-                    <li><button type="button" role="tab" data-value="shopping" aria-selected="false">쇼핑투데이</button></li>
+                    <li role="presentation"><button type="button" role="tab" data-value="economy" aria-selected="false">경제</button></li>
+                    <li role="presentation"><button type="button" role="tab" data-value="shopping" aria-selected="false">쇼핑투데이</button></li>
                 </ul>
             </section>
             <section class="section-shoppings">
