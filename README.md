@@ -39,10 +39,10 @@
 ![알림 메뉴](https://hyungyeong77.github.io/naver/assets/readme/notice.png)
 <br><br><br>
 ### [뉴스스탠드 탭 메뉴]
-![뉴스스탠드 탭 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-tab.png)
+![뉴스스탠드 탭 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-tab.gif)
 <br><br><br>
 ### [뉴스스탠드 리스트 메뉴]
-![뉴스스탠드 리스트 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-list.png)
+![뉴스스탠드 리스트 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-list.gif)
 <br><br><br>
 
 ## 개발 과정에서 학습한 내용
