@@ -26,14 +26,25 @@
 ![메인 페이지](https://hyungyeong77.github.io/naver/assets/capture/mainPage.png)
 <br><br><br>
 ### [플로팅 메뉴]
-![플로팅 메뉴](https://hyungyeong77.github.io/assets/capture/floating.png)
+![플로팅 메뉴](https://hyungyeong77.github.io/naver/assets/readme/floating.gif) <br>
+글자 크기 및 다크 모드 토글 기능 구현
 <br><br><br>
-### [의료 뉴스 페이지]
-![의료 뉴스 페이지](https://hyungyeong77.github.io/hodadoc/images/medicalnewsPage.png)
+### [햄버거 메뉴]
+![햄버거 메뉴](https://hyungyeong77.github.io/naver/assets/readme/hamburger.png)
 <br><br><br>
-### [고객 지원 페이지]
-![고객 지원 페이지](https://hyungyeong77.github.io/hodadoc/images/supportPage.png)
-
+### [네이버톡 메뉴]
+![네이버톡 모달](https://hyungyeong77.github.io/naver/assets/readme/talk.png)
+<br><br><br>
+### [알림 메뉴]
+![알림 메뉴](https://hyungyeong77.github.io/naver/assets/readme/notice.png)
+<br><br><br>
+### [뉴스스탠드 탭 메뉴]
+![뉴스스탠드 탭 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-tab.png)
+<br><br><br>
+### [뉴스스탠드 리스트 메뉴]
+![뉴스스탠드 리스트 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-list.png)
+<br><br><br>
 
 ## 개발 과정에서 학습한 내용
--
+- 웹 접근성 준수
+- fetch를 사용하여 동적 페이지 변경
