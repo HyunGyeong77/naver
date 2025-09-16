@@ -81,100 +81,104 @@ function listClick() {
             btmTotalPage.textContent = totalPage;
         }
 
-        newsList.addEventListener("click", function() {
-            if(this.getAttribute("aria-checked") === "true") return;
-
-            const pageChange = async (mainPath, subPath, del) => {
-                const response1 = await fetch(mainPath);
-                const data1 = await response1.text();
-
-                const newsTop = document.querySelector(".news-top");
-                newsTop.insertAdjacentHTML('beforeend', data1);
-
-                const response2 = await fetch(subPath);
-                const data2 = await response2.text();
-
-                const newPage = document.querySelector(".news-page-list");
-                newPage.insertAdjacentHTML('beforeend', data2);
-
-                newPage.classList.add("hidden");
-
-                const newPageTypeBtn = newPage.querySelectorAll("ul button");
-
-                newPageTypeBtn.forEach(item => {
-                    item.addEventListener("click", function() {
-                        Array.from(newPageTypeBtn).filter(item => item !== this).forEach(item => item.setAttribute("aria-selected", false));
-                        this.setAttribute("aria-selected", true);
-
-                        const dataValue = this.getAttribute("data-value");
-
-                        const pageChange = async (mainPath) => {
-                            const response = await fetch(mainPath);
-                            const data = await response.text();
-
-                            const newsPageList = document.querySelector(".news-page-list");
-                            newsPageList.insertAdjacentHTML('beforeend', data);
-
-                            const newPage = newsPageList.querySelector(`.news-list-${dataValue}1`);
-                            newPage.classList.add("hidden");
-
-                            requestAnimationFrame(() => {
-                                const oldDiv = newsPageList.children[1];
-                                oldDiv.remove();
-
-                                darkCheck();
-
-                                const btmTitle = document.querySelector(".news-btm-title");
-                                const btmTotalPage = document.querySelector(".news-btm-total-page");
-
-                                btmTitle.textContent = this.textContent + btmTitle.textContent.replace(btmTitle.textContent.split(" ")[0], "");
-                                btmTotalPage.textContent = this.getAttribute("data-total-number");
-
-                                newPage.classList.remove("hidden");
-                            });
-                        }
-
-                        pageChange(`components/section/news/page/list/news-list-${dataValue}1.html`);
+        if(newsList) {
+            newsList.addEventListener("click", function() {
+                if(this.getAttribute("aria-checked") === "true") return;
+    
+                const pageChange = async (mainPath, subPath, del) => {
+                    const response1 = await fetch(mainPath);
+                    const data1 = await response1.text();
+    
+                    const newsTop = document.querySelector(".news-top");
+                    newsTop.insertAdjacentHTML('beforeend', data1);
+    
+                    const response2 = await fetch(subPath);
+                    const data2 = await response2.text();
+    
+                    const newPage = document.querySelector(".news-page-list");
+                    newPage.insertAdjacentHTML('beforeend', data2);
+    
+                    newPage.classList.add("hidden");
+    
+                    const newPageTypeBtn = newPage.querySelectorAll("ul button");
+    
+                    newPageTypeBtn.forEach(item => {
+                        item.addEventListener("click", function() {
+                            Array.from(newPageTypeBtn).filter(item => item !== this).forEach(item => item.setAttribute("aria-selected", false));
+                            this.setAttribute("aria-selected", true);
+    
+                            const dataValue = this.getAttribute("data-value");
+    
+                            const pageChange = async (mainPath) => {
+                                const response = await fetch(mainPath);
+                                const data = await response.text();
+    
+                                const newsPageList = document.querySelector(".news-page-list");
+                                newsPageList.insertAdjacentHTML('beforeend', data);
+    
+                                const newPage = newsPageList.querySelector(`.news-list-${dataValue}1`);
+                                newPage.classList.add("hidden");
+    
+                                requestAnimationFrame(() => {
+                                    const oldDiv = newsPageList.children[1];
+                                    oldDiv.remove();
+    
+                                    darkCheck();
+    
+                                    const btmTitle = document.querySelector(".news-btm-title");
+                                    const btmTotalPage = document.querySelector(".news-btm-total-page");
+    
+                                    btmTitle.textContent = this.textContent + btmTitle.textContent.replace(btmTitle.textContent.split(" ")[0], "");
+                                    btmTotalPage.textContent = this.getAttribute("data-total-number");
+    
+                                    newPage.classList.remove("hidden");
+                                });
+                            }
+    
+                            pageChange(`components/section/news/page/list/news-list-${dataValue}1.html`);
+                        });
                     });
-                });
+    
+                    darkCheck();
+    
+                    requestAnimationFrame(() => {
+                        newsTop.querySelector(del).remove();
+                        newPage.classList.remove("hidden");
+                        newsBtmChange("종합/경제 언론사 뉴스", "/83");
+                    });
+                }
+    
+                ariaChecked(this, newsThumbnail);
+                pageChange("components/section/news/page/news-page-list.html", "components/section/news/page/list/news-list-economy1.html", ".news-page");
+            });
+        }
 
-                darkCheck();
-
-                requestAnimationFrame(() => {
-                    newsTop.querySelector(del).remove();
-                    newPage.classList.remove("hidden");
-                    newsBtmChange("종합/경제 언론사 뉴스", "/83");
-                });
-            }
-
-            ariaChecked(this, newsThumbnail);
-            pageChange("components/section/news/page/news-page-list.html", "components/section/news/page/list/news-list-economy1.html", ".news-page");
-        });
-
-        newsThumbnail.addEventListener("click", function() {
-            if(this.getAttribute("aria-checked") === "true") return;
-
-            const pageChange = async (mainPath, del) => {
-                const response = await fetch(mainPath);
-                const data = await response.text();
-
-                const newsTop = document.querySelector(".news-top");
-                newsTop.insertAdjacentHTML('beforeend', data);
-
-                const newPage = newsTop.querySelector(".news-page");
-                newPage.classList.add("hidden");
-
-                darkCheck();
-
-                requestAnimationFrame(() => {
-                    newsTop.querySelector(del).remove();
-                    newPage.classList.remove("hidden");
-                    newsBtmChange("언론사", "/4");
-                });
-            }
-
-            ariaChecked(this, newsList);
-            pageChange("components/section/news/page/news-page1.html", ".news-page-list");
-        })
-    }, 100);
+        if(newsThumbnail) {
+            newsThumbnail.addEventListener("click", function() {
+                if(this.getAttribute("aria-checked") === "true") return;
+    
+                const pageChange = async (mainPath, del) => {
+                    const response = await fetch(mainPath);
+                    const data = await response.text();
+    
+                    const newsTop = document.querySelector(".news-top");
+                    newsTop.insertAdjacentHTML('beforeend', data);
+    
+                    const newPage = newsTop.querySelector(".news-page");
+                    newPage.classList.add("hidden");
+    
+                    darkCheck();
+    
+                    requestAnimationFrame(() => {
+                        newsTop.querySelector(del).remove();
+                        newPage.classList.remove("hidden");
+                        newsBtmChange("언론사", "/4");
+                    });
+                }
+    
+                ariaChecked(this, newsList);
+                pageChange("components/section/news/page/news-page1.html", ".news-page-list");
+            })
+        }
+    }, 60);
 }
