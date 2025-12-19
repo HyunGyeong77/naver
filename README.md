@@ -23,26 +23,26 @@
 
 ## 🖥️ 화면 구성
 ### [메인 페이지]
-![메인 페이지](assets/readme/main-page.png)
+![메인 페이지](https://hyungyeong77.github.io/naver/assets/readme/main-page.png)
 <br><br><br>
 ### [플로팅 메뉴]
-![플로팅 메뉴](assets/readme/floating.gif) <br>
+![플로팅 메뉴](https://hyungyeong77.github.io/naver/assets/readme/floating.gif) <br>
 글자 크기 및 다크 모드 토글 기능 구현
 <br><br><br>
 ### [햄버거 메뉴]
-![햄버거 메뉴](assets/readme/hamburger.png)
+![햄버거 메뉴](https://hyungyeong77.github.io/naver/assets/readme/hamburger.png)
 <br><br><br>
 ### [네이버톡 메뉴]
-![네이버톡 모달](assets/readme/talk.png)
+![네이버톡 모달](https://hyungyeong77.github.io/naver/assets/readme/talk.png)
 <br><br><br>
 ### [알림 메뉴]
-![알림 메뉴](assets/readme/notice.png)
+![알림 메뉴](https://hyungyeong77.github.io/naver/assets/readme/notice.png)
 <br><br><br>
 ### [뉴스스탠드 탭 메뉴]
-![뉴스스탠드 탭 메뉴](assets/readme/newsstand-tab.gif)
+![뉴스스탠드 탭 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-tab.gif)
 <br><br><br>
 ### [뉴스스탠드 리스트 메뉴]
-![뉴스스탠드 리스트 메뉴](assets/readme/newsstand-list.gif)
+![뉴스스탠드 리스트 메뉴](https://hyungyeong77.github.io/naver/assets/readme/newsstand-list.gif)
 <br><br><br>
 
 ## 개발 과정에서 학습한 내용
